@@ -4,7 +4,7 @@
 # compile C with /Library/Developer/CommandLineTools/usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = 
+C_INCLUDES = -I/Users/nik/Documents/GitHub/opengl_practice/Tetris/include
 
 C_FLAGS =  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk
 

@@ -7,6 +7,8 @@ set(CMAKE_CXX_STANDARD 17)
 add_executable(Tetris MACOSX_BUNDLE src/main.cpp)
 
 # Include directories for your project
+include_directories("${CMAKE_SOURCE_DIR}/include")
+
 target_include_directories(Tetris PUBLIC include/)
 
 # Include glad library 
