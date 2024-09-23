@@ -1,0 +1,6 @@
+CompileFlags:
+  Add: 
+    - "-I[include]"
+
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+

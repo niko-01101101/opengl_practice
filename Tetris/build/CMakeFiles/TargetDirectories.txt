@@ -1,0 +1,4 @@
+/Users/nik/Documents/GitHub/opengl_practice/Tetris/build/CMakeFiles/Tetris.dir
+/Users/nik/Documents/GitHub/opengl_practice/Tetris/build/CMakeFiles/glad.dir
+/Users/nik/Documents/GitHub/opengl_practice/Tetris/build/CMakeFiles/edit_cache.dir
+/Users/nik/Documents/GitHub/opengl_practice/Tetris/build/CMakeFiles/rebuild_cache.dir
