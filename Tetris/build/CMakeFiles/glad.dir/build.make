@@ -69,28 +69,28 @@ include CMakeFiles/glad.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/glad.dir/flags.make
 
-CMakeFiles/glad.dir/include/glad/glad.c.o: CMakeFiles/glad.dir/flags.make
-CMakeFiles/glad.dir/include/glad/glad.c.o: /Users/nik/Documents/GitHub/opengl_practice/Tetris/include/glad/glad.c
-CMakeFiles/glad.dir/include/glad/glad.c.o: CMakeFiles/glad.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/nik/Documents/GitHub/opengl_practice/Tetris/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/glad.dir/include/glad/glad.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/glad.dir/include/glad/glad.c.o -MF CMakeFiles/glad.dir/include/glad/glad.c.o.d -o CMakeFiles/glad.dir/include/glad/glad.c.o -c /Users/nik/Documents/GitHub/opengl_practice/Tetris/include/glad/glad.c
+CMakeFiles/glad.dir/lib/glad/glad.c.o: CMakeFiles/glad.dir/flags.make
+CMakeFiles/glad.dir/lib/glad/glad.c.o: /Users/nik/Documents/GitHub/opengl_practice/Tetris/lib/glad/glad.c
+CMakeFiles/glad.dir/lib/glad/glad.c.o: CMakeFiles/glad.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/nik/Documents/GitHub/opengl_practice/Tetris/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/glad.dir/lib/glad/glad.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/glad.dir/lib/glad/glad.c.o -MF CMakeFiles/glad.dir/lib/glad/glad.c.o.d -o CMakeFiles/glad.dir/lib/glad/glad.c.o -c /Users/nik/Documents/GitHub/opengl_practice/Tetris/lib/glad/glad.c
 
-CMakeFiles/glad.dir/include/glad/glad.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/glad.dir/include/glad/glad.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/nik/Documents/GitHub/opengl_practice/Tetris/include/glad/glad.c > CMakeFiles/glad.dir/include/glad/glad.c.i
+CMakeFiles/glad.dir/lib/glad/glad.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/glad.dir/lib/glad/glad.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/nik/Documents/GitHub/opengl_practice/Tetris/lib/glad/glad.c > CMakeFiles/glad.dir/lib/glad/glad.c.i
 
-CMakeFiles/glad.dir/include/glad/glad.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/glad.dir/include/glad/glad.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/nik/Documents/GitHub/opengl_practice/Tetris/include/glad/glad.c -o CMakeFiles/glad.dir/include/glad/glad.c.s
+CMakeFiles/glad.dir/lib/glad/glad.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/glad.dir/lib/glad/glad.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/nik/Documents/GitHub/opengl_practice/Tetris/lib/glad/glad.c -o CMakeFiles/glad.dir/lib/glad/glad.c.s
 
 # Object files for target glad
 glad_OBJECTS = \
-"CMakeFiles/glad.dir/include/glad/glad.c.o"
+"CMakeFiles/glad.dir/lib/glad/glad.c.o"
 
 # External object files for target glad
 glad_EXTERNAL_OBJECTS =
 
-libglad.a: CMakeFiles/glad.dir/include/glad/glad.c.o
+libglad.a: CMakeFiles/glad.dir/lib/glad/glad.c.o
 libglad.a: CMakeFiles/glad.dir/build.make
 libglad.a: CMakeFiles/glad.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/nik/Documents/GitHub/opengl_practice/Tetris/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libglad.a"

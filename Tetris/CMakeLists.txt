@@ -12,7 +12,7 @@ include_directories("${CMAKE_SOURCE_DIR}/include")
 target_include_directories(Tetris PUBLIC include/)
 
 # Include glad library 
-add_library(glad "include/glad/glad.c")  
+add_library(glad "lib/glad/glad.c")  
 
 # Find and link GLFW
 find_package(GLFW3 REQUIRED)

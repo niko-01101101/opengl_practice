@@ -142,29 +142,29 @@ glad/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/glad.dir/build.make CMakeFiles/glad.dir/build
 .PHONY : glad/fast
 
-include/glad/glad.o: include/glad/glad.c.o
-.PHONY : include/glad/glad.o
+lib/glad/glad.o: lib/glad/glad.c.o
+.PHONY : lib/glad/glad.o
 
 # target to build an object file
-include/glad/glad.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/glad.dir/build.make CMakeFiles/glad.dir/include/glad/glad.c.o
-.PHONY : include/glad/glad.c.o
+lib/glad/glad.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glad.dir/build.make CMakeFiles/glad.dir/lib/glad/glad.c.o
+.PHONY : lib/glad/glad.c.o
 
-include/glad/glad.i: include/glad/glad.c.i
-.PHONY : include/glad/glad.i
+lib/glad/glad.i: lib/glad/glad.c.i
+.PHONY : lib/glad/glad.i
 
 # target to preprocess a source file
-include/glad/glad.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/glad.dir/build.make CMakeFiles/glad.dir/include/glad/glad.c.i
-.PHONY : include/glad/glad.c.i
+lib/glad/glad.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glad.dir/build.make CMakeFiles/glad.dir/lib/glad/glad.c.i
+.PHONY : lib/glad/glad.c.i
 
-include/glad/glad.s: include/glad/glad.c.s
-.PHONY : include/glad/glad.s
+lib/glad/glad.s: lib/glad/glad.c.s
+.PHONY : lib/glad/glad.s
 
 # target to generate assembly for a file
-include/glad/glad.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/glad.dir/build.make CMakeFiles/glad.dir/include/glad/glad.c.s
-.PHONY : include/glad/glad.c.s
+lib/glad/glad.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glad.dir/build.make CMakeFiles/glad.dir/lib/glad/glad.c.s
+.PHONY : lib/glad/glad.c.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -200,9 +200,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Tetris"
 	@echo "... glad"
-	@echo "... include/glad/glad.o"
-	@echo "... include/glad/glad.i"
-	@echo "... include/glad/glad.s"
+	@echo "... lib/glad/glad.o"
+	@echo "... lib/glad/glad.i"
+	@echo "... lib/glad/glad.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

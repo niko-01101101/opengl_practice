@@ -59,7 +59,7 @@ int main(void) {
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
   GLFWwindow *window =
-      glfwCreateWindow(640, 480, "OpenGL Triangle", NULL, NULL);
+      glfwCreateWindow(640, 480, "OpenGL Practice", NULL, NULL);
   if (!window) {
     glfwTerminate();
     exit(EXIT_FAILURE);
