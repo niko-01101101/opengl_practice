@@ -1,0 +1,4 @@
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/build/CMakeFiles/DOOM.dir
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/build/CMakeFiles/glad.dir
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/build/CMakeFiles/edit_cache.dir
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/build/CMakeFiles/rebuild_cache.dir
