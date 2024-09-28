@@ -276,6 +276,11 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__bit/popcount.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__bit/rotate.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__bit_reference \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__charconv/tables.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__charconv/to_chars_base_10.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__charconv/to_chars_integral.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__charconv/to_chars_result.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__charconv/traits.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__chrono/convert_to_timespec.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__chrono/duration.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__chrono/file_clock.h \
@@ -344,15 +349,49 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/space_info.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/u8path.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/buffer.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/concepts.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/enable_insertable.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/extended_grapheme_cluster_table.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/format_arg.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/format_error.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/format_fwd.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/format_parse_context.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/format_string.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/format_to_n_result.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/formatter.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/formatter_bool.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/formatter_integral.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/formatter_output.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/parser_std_format_spec.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/unicode.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/width_estimation_table.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/binary_function.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/binary_negate.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/bind.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/bind_back.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/bind_front.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/binder1st.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/binder2nd.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/boyer_moore_searcher.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/compose.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/default_searcher.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/function.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/hash.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/identity.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/invoke.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/is_transparent.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/mem_fn.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/mem_fun_ref.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/not_fn.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/operations.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/perfect_forward.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/pointer_to_binary_function.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/pointer_to_unary_function.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/ranges_operations.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/reference_wrapper.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/unary_function.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/unary_negate.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/array.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/fstream.h \
@@ -369,6 +408,7 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/string_view.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/subrange.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/tuple.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__hash_table \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__ios/fpos.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/access.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/advance.h \
@@ -402,6 +442,7 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/permutable.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/prev.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/projected.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/ranges_iterator_traits.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/readable_traits.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/reverse_access.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/reverse_iterator.h \
@@ -423,6 +464,7 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/allocator_traits.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/assume_aligned.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/auto_ptr.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/builtin_new_allocator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/compressed_pair.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/concepts.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/construct_at.h \
@@ -433,6 +475,7 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/raw_storage_iterator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/shared_ptr.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/swap_allocator.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/temp_value.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/temporary_buffer.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/uninitialized_algorithms.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/unique_ptr.h \
@@ -445,6 +488,7 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__mutex/mutex.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__mutex/tag_types.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__mutex/unique_lock.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__node_handle \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__numeric/pstl_transform_reduce.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__numeric/reduce.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__numeric/transform_reduce.h \
@@ -464,6 +508,7 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__ranges/size.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__ranges/subrange.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__ranges/view_interface.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__split_buffer \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__std_mbstate_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__string/char_traits.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__string/constexpr_c_functions.h \
@@ -595,6 +640,7 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_void.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_volatile.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/lazy.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/make_32_64_or_128_bit.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/make_const_lvalue_ref.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/make_signed.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/make_unsigned.h \
@@ -616,6 +662,7 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/remove_reference.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/remove_volatile.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/result_of.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/strip_signature.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/type_identity.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/type_list.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/underlying_type.h \
@@ -646,11 +693,14 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__variant/monostate.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__verbose_abort \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/algorithm \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/array \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/atomic \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/bit \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/bitset \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/cassert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/cctype \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/cerrno \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/cfloat \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/climits \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/clocale \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/cmath \
@@ -670,7 +720,9 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/exception \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/execution \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/filesystem \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/float.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/fstream \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/functional \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/initializer_list \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/iomanip \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ios \
@@ -685,6 +737,7 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/memory \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/mutex \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/new \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/optional \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ratio \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/sstream \
@@ -701,13 +754,16 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/tuple \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/type_traits \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/typeinfo \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/unordered_map \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/utility \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/variant \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/vector \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/version \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/wchar.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/wctype.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/ctype.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/errno.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/float.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/i386/_limits.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/i386/_mcontext.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/i386/_types.h \
@@ -842,6 +898,7 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/xlocale/_wctype.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/__stddef_max_align_t.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/emmintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/float.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/limits.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/mm_malloc.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/mmintrin.h \
@@ -852,14 +909,473 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/GLFW/glfw3.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glad/glad.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glad/khrplatform.h \
-  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/linmath.h \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/common.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/qualifier.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/setup.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_float.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat2x2.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat2x3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat2x4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat3x2.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat3x3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat3x4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat4x2.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat4x3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat4x4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_quat.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_vec1.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_vec2.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_vec3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_vec4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/exponential.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_geometric.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/scalar_constants.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/scalar_int_sized.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/scalar_uint_sized.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_int1.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_int2.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_int3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_int4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_relational.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_uint1.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_uint2.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_uint3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_uint4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/geometric.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/constants.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/matrix.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/trigonometric.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/vector_relational.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_clip_space.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double2x2.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double2x2_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double2x3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double2x3_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double2x4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double2x4_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double3x2.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double3x2_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double3x3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double3x3_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double3x4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double3x4_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double4x2.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double4x2_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double4x3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double4x3_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double4x4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double4x4_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float2x2.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float2x2_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float2x3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float2x3_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float2x4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float2x4_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float3x2.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float3x2_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float3x3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float3x3_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float3x4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float3x4_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float4x2.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float4x2_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float4x3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float4x3_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float4x4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float4x4_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_projection.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_transform.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_common.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_geometric.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_relational.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_transform.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_trigonometric.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/scalar_constants.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/scalar_constants.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_bool2.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_bool2_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_bool3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_bool3_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_bool4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_bool4_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_double2.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_double2_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_double3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_double3_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_double4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_double4_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_float2.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_float2_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_float3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_float3_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_float4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_float4_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_int2.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_int2_sized.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_int3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_int3_sized.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_int4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_int4_sized.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_relational.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_relational.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_uint2.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_uint2_sized.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_uint3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_uint3_sized.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_uint4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_uint4_sized.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/common.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/common.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat3x3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat4x4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_vec3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_vec4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/exponential.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_common.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_geometric.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_relational.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_relational.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/geometric.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/constants.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/matrix_transform.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/matrix.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/simd/platform.h \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/trigonometric.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/vector_relational.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/compute_vector_relational.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/_fixes.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/_vectorize.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/compute_common.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/compute_vector_decl.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/compute_vector_relational.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/func_common.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/func_exponential.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/func_geometric.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/func_integer.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/func_matrix.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/func_packing.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/func_trigonometric.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/func_vector_relational.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/qualifier.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/setup.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_half.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_half.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat2x2.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat2x3.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat2x4.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat3x2.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat3x3.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat3x4.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat4x2.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat4x3.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat4x4.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_quat.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_vec1.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_vec1.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_vec2.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_vec2.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_vec3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_vec3.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_vec4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_vec4.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/exponential.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/fwd.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/geometric.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/glm.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/common.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/qualifier.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/setup.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat3x3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat4x4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_vec3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_vec4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/exponential.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_clip_space.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_projection.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_transform.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_common.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_double.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_double_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_float.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_float_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_geometric.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_relational.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_transform.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_trigonometric.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/scalar_constants.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_bool1.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_bool1_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_double1.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_double1_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_float1.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_float1_precision.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_int1.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_int1_sized.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_relational.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_uint1.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_uint1_sized.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/geometric.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/constants.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/matrix_transform.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/quaternion.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/vec1.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat2x2.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat2x3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat2x4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat3x2.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat3x3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat3x4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat4x2.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat4x3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat4x4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/matrix.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/trigonometric.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/vec2.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/vec3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/vec4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/vector_relational.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/constants.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/epsilon.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/epsilon.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/matrix_transform.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/matrix_transform.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/quaternion.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/type_ptr.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/type_ptr.inl \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/integer.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat2x2.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat2x3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat2x4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat3x2.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat3x3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat3x4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat4x2.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat4x3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat4x4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/matrix.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/packing.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/trigonometric.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/vec2.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/vec3.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/vec4.hpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/vector_relational.hpp \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/stb_image.h \
-  /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/loadshaders.cpp
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/loadshaders.cpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/object.h \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/plane.h
 
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/plane.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/packing.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/type_ptr.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/matrix_transform.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/vec4.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/vec2.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat4x4.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat4x2.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat2x3.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat2x2.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_uint1_sized.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_double1.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_bool1.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_trigonometric.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_float_precision.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_float.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_double.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/glm.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/fwd.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_vec4.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/constants.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_vec3.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_vec1.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_quat.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat4x4.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat4x3.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat3x2.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat2x4.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat2x3.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat2x2.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_half.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_half.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/func_trigonometric.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/func_matrix.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/func_integer.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/func_geometric.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/func_common.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/compute_vector_decl.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/compute_common.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/_vectorize.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/simd/platform.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/type_ptr.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_relational.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_uint4_sized.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_relational.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_int3_sized.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_int2_sized.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_float4.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_float3_precision.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_float3.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_float2.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_double4.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_double3_precision.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_bool4_precision.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat3x3.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_bool4.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_bool3_precision.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_bool2.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/scalar_constants.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_relational.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_geometric.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_transform.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_projection.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float4x3_precision.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float4x2_precision.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float4x2.hpp:
 
 /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/loadshaders.cpp:
 
-/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/linmath.h:
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float3x4_precision.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float3x4.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float3x3_precision.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_double2_precision.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float3x2_precision.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float3x2.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float2x4_precision.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float2x3_precision.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float2x3.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double4x3.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double3x4_precision.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double3x4.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double3x3.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double3x2_precision.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double2x4_precision.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double2x4.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_double_precision.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double2x2_precision.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double2x2.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/trigonometric.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_relational.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_int4.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_int3.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_int2.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/scalar_uint_sized.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/scalar_int_sized.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/exponential.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_vec4.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat3x4.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_quat.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat4x4.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat4x2.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat3x3.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_uint2.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat2x3.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat2x2.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_float.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/setup.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/common.hpp:
 
 /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glad/khrplatform.h:
 
@@ -891,6 +1407,8 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/wchar.h:
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat3x3.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/types.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/syslimits.h:
@@ -899,19 +1417,13 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/qos.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/errno.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/cdefs.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_va_list.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_useconds_t.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_u_short.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_u_int8_t.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_u_int64_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_u_int32_t.h:
 
@@ -923,51 +1435,105 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_time_t.h:
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/quaternion.inl:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_suseconds_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_size_t.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_sigset_t.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_sigaltstack.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_unique.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_rune_t.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_pid_t.h:
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double4x3_precision.hpp:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_rsize_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_null.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_nlink_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_mode_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_mbstate_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_mach_port_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_key_t.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_intptr_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_int8_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_int64_t.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_int32_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_int16_t.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/epsilon.hpp:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_ino_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_ino64_t.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_abstract.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_fsblkcnt_t.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_id_t.h:
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/_fixes.hpp:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/get.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_fsfilcnt_t.h:
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/compute_vector_relational.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_fd_setsize.h:
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat3x2.hpp:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_fd_isset.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_fd_copy.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_clock_t.h:
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_uint2_sized.hpp:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_fd_clr.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_errno_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_dev_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/appleapiopts.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_caddr_t.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/constants.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_blksize_t.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float4x4_precision.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_blkcnt_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_symbol_aliasing.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_pthread/_pthread_types.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_int1_sized.hpp:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_pthread/_pthread_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_pthread/_pthread_rwlockattr_t.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double4x2.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_pthread/_pthread_rwlock_t.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_pthread/_pthread_mutex_t.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_pthread/_pthread_once_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_pthread/_pthread_mutexattr_t.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/AvailabilityInternalLegacy.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_pthread/_pthread_cond_t.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_pthread/_pthread_mutex_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_pthread/_pthread_attr_t.h:
 
@@ -975,17 +1541,15 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_posix_availability.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_endian.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/strings.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_is_sorted.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/stdlib.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/pthread/pthread_impl.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/comp_ref_type.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/pthread.h:
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_float2_precision.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/machine/types.h:
 
@@ -1001,6 +1565,8 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/i386/types.h:
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_float1_precision.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/enable_if.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/i386/signal.h:
@@ -1015,7 +1581,29 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/wctype.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/comp_ref_type.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/pthread.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_fd_def.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_nothrow_copy_constructible.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/vector:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/execution:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/lexicographical_compare.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__chrono/file_clock.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__compare/compare_three_way.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/unordered_map:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/typeinfo:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/matrix_transform.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/adjacent_find.h:
 
@@ -1028,6 +1616,8 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/equal.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/string.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_double1_precision.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/wrap_iter.h:
 
@@ -1043,11 +1633,9 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/math.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_nothrow_copy_constructible.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_fd_def.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/locale.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/epsilon.inl:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/machine/_mcontext.h:
 
@@ -1059,6 +1647,8 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/istream:
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/geometric.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/iosfwd:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_move_backward.h:
@@ -1067,9 +1657,15 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ios:
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/func_exponential.inl:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_stable_sort.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/fstream:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_int4_sized.hpp:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/float.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/filesystem:
 
@@ -1087,17 +1683,19 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ostream:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__charconv/tables.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/concepts:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/bitset:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/errno.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/cassert:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/atomic:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_fsblkcnt_t.h:
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat3x4.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__variant/monostate.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__utility/rel_ops.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/common_reference.h:
 
@@ -1113,13 +1711,17 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__utility/forward.h:
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat4x2.inl:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__utility/declval.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/func_packing.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_float4_precision.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/pstl_backends/cpu_backends/transform.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__utility/convert_to_integral.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_nlink_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_none_of.h:
 
@@ -1145,6 +1747,8 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/remove_cv.h:
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float2x2_precision.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/machine/endian.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/promote.h:
@@ -1157,15 +1761,13 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/nat.h:
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_vec3.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/maybe_const.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_remove_if.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/make_const_lvalue_ref.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_void.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_int64_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/counted_iterator.h:
 
@@ -1185,15 +1787,21 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_trivially_copy_constructible.h:
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_transform.inl:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_trivially_constructible.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_vec2.inl:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_trivially_assignable.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/errno.h:
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_uint3_sized.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_trivial.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/i386/_limits.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double2x3.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_standard_layout.h:
 
@@ -1205,7 +1813,7 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_signed_integer.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_fd_clr.h:
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat2x4.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_scoped_enum.h:
 
@@ -1235,7 +1843,11 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/add_lvalue_reference.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/default_searcher.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_nothrow_convertible.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_double3.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_is_heap.h:
 
@@ -1257,9 +1869,15 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_fundamental.h:
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_geometric.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/mach/i386/_structs.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_final.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/vec1.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/func_vector_relational.inl:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_execution_policy.h:
 
@@ -1273,6 +1891,8 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_copy_assignable.h:
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_uint3.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_unsigned_integer.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_partial_sort_copy.h:
@@ -1283,7 +1903,11 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_compound.h:
 
+/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/float.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_class.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/scalar_constants.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_bounded_array.h:
 
@@ -1303,8 +1927,6 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_always_bitcastable.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_allocator.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/in_out_result.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__atomic/contention_t.h:
@@ -1317,7 +1939,13 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_aggregate.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_id_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_abstract.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/integral_constant.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_transform.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/has_virtual_destructor.h:
 
@@ -1347,9 +1975,9 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/common_type.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_ino_t.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_primary_template.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/array:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdexcept:
 
@@ -1363,13 +1991,13 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/add_rvalue_reference.h:
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/matrix.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat4x3.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_copy.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/add_pointer.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__locale:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/add_const.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_for_each_n.h:
 
@@ -1383,6 +2011,8 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__tuple/make_tuple_types.h:
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float2x2.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/errno.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__tuple/sfinae_helpers.h:
@@ -1393,9 +2023,13 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__system_error/error_code.h:
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/vec3.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__string/constexpr_c_functions.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__string/char_traits.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__split_buffer:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__ranges/subrange.h:
 
@@ -1419,19 +2053,21 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__random/uniform_random_bit_generator.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_enum.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/sort_heap.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_pthread/_pthread_condattr_t.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__random/log2.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__random/is_valid.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_pthread/_pthread_key_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__atomic/atomic.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/make_32_64_or_128_bit.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__numeric/transform_reduce.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__locale_dir/locale_base_api/bsd_locale_defaults.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/functional:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__numeric/reduce.h:
 
@@ -1443,13 +2079,21 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_assignable.h:
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_double2.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__mutex/tag_types.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/predicate_traits.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__mutex/mutex.h:
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float4x3.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float2x4.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__mutex/lock_guard.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__charconv/traits.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__utility/integer_sequence.h:
 
@@ -1466,10 +2110,6 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/remove_all_extents.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/uses_allocator.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/libkern/i386/_OSByteOrder.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/unique_ptr.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__verbose_abort:
 
@@ -1489,21 +2129,31 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/type_list.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_u_int64_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/strip_signature.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/ranges_uninitialized_algorithms.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_rune_t.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/float.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/system_error:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_move_constructible.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/extended_grapheme_cluster_table.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/ranges_construct_at.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_vec1.hpp:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/binary_negate.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_pod.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/includes.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_in_addr_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/includes.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/pointer_traits.h:
 
@@ -1517,9 +2167,7 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/concepts.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__utility/auto_cast.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/compressed_pair.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/builtin_new_allocator.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_merge.h:
 
@@ -1531,11 +2179,11 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/allocator_destructor.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/allocator_arg_t.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__concepts/constructible.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__random/uniform_int_distribution.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_bool2_precision.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/inplace_merge.h:
 
@@ -1548,8 +2196,6 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/align.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/unreachable_sentinel.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_mbstate_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/sortable.h:
 
@@ -1567,6 +2213,8 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/readable_traits.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/ranges_iterator_traits.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__ranges/view_interface.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/prev.h:
@@ -1575,11 +2223,19 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/ostreambuf_iterator.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/type_traits:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/move_sentinel.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_uint1.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_wchar_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/pstl_stable_sort.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_function.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_projection.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/permutable.h:
 
@@ -1595,21 +2251,39 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/iter_move.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/bind_back.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/copy_cvref.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_double4_precision.hpp:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/istreambuf_iterator.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/istream_iterator.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_callable.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/front_insert_iterator.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/remove_extent.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/erase_if_container.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/empty.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__undef_macros:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/default_sentinel.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/string.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/back_insert_iterator.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/shuffle.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sched.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/common_iterator.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_trivially_move_constructible.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_timespec.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/data.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__thread/id.h:
 
@@ -1617,25 +2291,35 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_char_like_type.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sched.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/back_insert_iterator.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/access.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/advance.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/pstl_backend.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__bit/byteswap.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/subrange.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/stdint.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__ios/fpos.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/tuple.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/string.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/move_backward.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/iomanip:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/__wctype.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/streambuf.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/machine/limits.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/sstream.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/pair.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/ostream.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__concepts/predicate.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/copy_options.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/memory_resource.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/istream.h:
 
@@ -1649,13 +2333,33 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/ranges_operations.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/noexcept_move_assign_container.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_pthread/_pthread_cond_t.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/iomanip:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/AvailabilityInternalLegacy.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/move_backward.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/_types/_uint32_t.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/ostream_iterator.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/pointer_to_binary_function.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat3x4.hpp:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__std_mbstate_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/remove_if.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/cpp17_iterator_concepts.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/perfect_forward.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_trigonometric.inl:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_nothrow_copy_assignable.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__chrono/high_resolution_clock.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/errno.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/is_transparent.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_default_constructible.h:
 
@@ -1663,7 +2367,17 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/in_in_out_result.h:
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_clip_space.inl:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat3x2.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/identity.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/binder2nd.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/bind_front.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/bitset:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/filesystem_error.h:
 
@@ -1675,7 +2389,35 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/binary_function.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/unicode.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/iter_swap.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_find_end.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_mat2x4.hpp:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/formatter.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_u_short.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/format_to_n_result.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/format_string.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_transform.hpp:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/format_parse_context.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/min_max_result.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/pstl_backends/cpu_backends/libdispatch.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/format_arg.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/enable_insertable.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/buffer.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h:
 
@@ -1695,17 +2437,11 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__utility/in_place.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/streambuf.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/__wctype.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/file_type.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__ranges/enable_borrowed_range.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/directory_options.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/empty.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/directory_iterator.h:
 
@@ -1739,8 +2475,6 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__concepts/derived_from.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_intptr_t.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/_types/_wctype_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/partial_sort.h:
@@ -1750,6 +2484,8 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__concepts/totally_ordered.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__concepts/common_with.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/concepts.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/pstl_frontend_dispatch.h:
 
@@ -1771,6 +2507,8 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__compare/three_way_comparable.h:
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/object.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__compare/strong_order.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/pstl_backends/cpu_backends/backend.h:
@@ -1785,17 +2523,9 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/unwrap_iter.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/format_fwd.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__compare/compare_three_way_result.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/execution:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/lexicographical_compare.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__chrono/file_clock.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__compare/compare_three_way.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_null.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/tuple:
 
@@ -1807,19 +2537,19 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__compare/common_comparison_category.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/machine/limits.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/sstream.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__condition_variable/condition_variable.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__chrono/time_point.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/pstl_backends/cpu_backends/merge.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/indirectly_comparable.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/pstl_backends/cpu_backends/merge.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__chrono/system_clock.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_clock_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/mem_fn.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/rank.h:
 
@@ -1827,11 +2557,29 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__chrono/steady_clock.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/width_estimation_table.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_implicitly_default_constructible.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_push_heap.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/compose.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__compare/synth_three_way.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/format_error.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/pstl_backends/cpu_backends/fill.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/next_permutation.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__node_handle:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_transform.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_allocator.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__charconv/to_chars_result.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/directory_entry.h:
 
@@ -1840,6 +2588,8 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_u_int.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__config_site:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double4x4_precision.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_member_object_pointer.h:
 
@@ -1863,15 +2613,15 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__bit/bit_log2.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_nothrow_copy_assignable.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__chrono/high_resolution_clock.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__bit/bit_floor.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_remove.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__bit/bit_ceil.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_void.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/unary_negate.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/string_view.h:
 
@@ -1883,7 +2633,13 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__atomic/memory_order.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_gid_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/optional:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/pstl_backends/cpu_backend.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double3x2.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/resource.h:
 
@@ -1893,6 +2649,8 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__atomic/is_always_lock_free.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/replace_copy_if.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/remove_const.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/is_sorted.h:
@@ -1901,9 +2659,9 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__atomic/check_memory_order.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_errno_t.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_nothrow_destructible.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__hash_table:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__concepts/invocable.h:
 
@@ -1931,15 +2689,23 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/space_info.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/pthread/pthread_impl.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/function.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/unique.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/boyer_moore_searcher.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/xlocale/_wctype.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/three_way_comp_ref_type.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_pthread/_pthread_types.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_pthread/_pthread_condattr_t.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_fd_isset.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_enum.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/sort_heap.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/shift_right.h:
 
@@ -1959,10 +2725,6 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__compare/partial_order.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_pthread/_pthread_key_t.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__atomic/atomic.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__bit/popcount.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/partial_sort_copy.h:
@@ -1973,19 +2735,21 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/search_n.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/locale:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/has_unique_object_representation.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/search.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/next.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__mbstate_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__compare/compare_strong_order_fallback.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/locale:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/has_unique_object_representation.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/next.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/search.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__atomic/kill_dependency.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/qualifier.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/lazy.h:
 
@@ -2009,23 +2773,21 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__atomic/atomic_flag.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_mode_t.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_copy_n.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_transform.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_pid_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_unique.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_swap_ranges.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/appleapiopts.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_caddr_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/assert.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdint.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/reverse_access.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_float1.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_stable_partition.h:
 
@@ -2043,15 +2805,9 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/any_of.h:
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float3x3.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/array.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_reverse_copy.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_off_t.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/cpp17_iterator_concepts.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/remove_if.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_uid_t.h:
 
@@ -2061,9 +2817,15 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_search_n.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/type_traits:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__locale:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/move_sentinel.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/add_const.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/temp_value.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double4x4.hpp:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/parser_std_format_spec.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_set_symmetric_difference.h:
 
@@ -2091,11 +2853,11 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_partition_point.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__bit/byteswap.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/stdint.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/aligned_union.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_off_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_reverse_copy.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/copy_move_common.h:
 
@@ -2107,11 +2869,11 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__atomic/atomic_base.h:
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_clip_space.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__exception/exception.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_next_permutation.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_int8_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/find.h:
 
@@ -2125,13 +2887,15 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_find.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/bind.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/_locale.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/in_found_result.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/_types/_uint32_t.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_make_heap.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/allocator_arg_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_min.h:
 
@@ -2140,6 +2904,8 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_in_port_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/pstl_any_all_none_of.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_bool3.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/all_of.h:
 
@@ -2175,21 +2941,39 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/limits:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_inplace_merge.h:
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/mat4x3.hpp:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__ios/fpos.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_inplace_merge.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__utility/move.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_find_first_of.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/iter_swap.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/string.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_find_end.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/cfloat:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/stb_image.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_max.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/compressed_pair.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/formatter_integral.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__utility/rel_ops.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/quaternion.hpp:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/_types.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/mem_fun_ref.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_wint_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_max_element.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_float4x4.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/remove_volatile.h:
 
@@ -2211,19 +2995,13 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_is_permutation.h:
 
-/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/stb_image.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_max.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_fd_zero.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/iterator_operations.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_fd_zero.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_count.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_any_of.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_mach_port_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__string/extern_template_lists.h:
 
@@ -2239,9 +3017,15 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_copy_if.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/copy_options.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__concepts/predicate.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_unique_copy.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/sort.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_common.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/copy_n.h:
 
@@ -2269,23 +3053,25 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/file_time_type.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/common_iterator.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/shuffle.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_member_function_pointer.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/partition_copy.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_gid_t.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/pstl_backends/cpu_backends/libdispatch.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/string.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/wchar.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/formatter_output.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/pstl_for_each.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/AvailabilityVersions.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_replace_copy_if.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_uint4.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_literal_type.h:
 
@@ -2303,11 +3089,11 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__system_error/error_condition.h:
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/vector_relational.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/pstl_is_partitioned.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/merge.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_dev_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/none_of.h:
 
@@ -2325,9 +3111,9 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/minmax.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/next_permutation.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/conjunction.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/binder1st.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__concepts/different_from.h:
 
@@ -2337,17 +3123,15 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/clamp.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_is_sorted_until.h:
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double4x2_precision.hpp:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/min_max_result.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_is_sorted_until.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/min.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/aligned_storage.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_seek_set.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/binary_search.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/detail/type_vec2.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/for_each_segment.h:
 
@@ -2361,8 +3145,6 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_reverse.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/tuple.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/for_each_n.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/make_projected.h:
@@ -2370,10 +3152,6 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/pstl_backends/cpu_backends/for_each.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/lower_bound.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/copy_cvref.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/istreambuf_iterator.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/math.h:
 
@@ -2385,13 +3163,19 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/move.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__format/formatter_bool.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_referenceable.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__charconv/to_chars_integral.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_remove_copy_if.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_sigset_t.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__utility/auto_cast.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__charconv/to_chars_base_10.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/reverse_iterator.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_symbol_aliasing.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_set_union.h:
 
@@ -2401,51 +3185,49 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_signed.h:
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_common.inl:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__tuple/tuple_types.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/comp.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_referenceable.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/pstl_backends/cpu_backends/stable_sort.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/noexcept_move_assign_container.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_bool1_precision.hpp:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/ostream_iterator.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/memory_resource.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/is_sorted_until.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_fsfilcnt_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/get.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_nothrow_assignable.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/prev_permutation.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/_types.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__availability:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/_types/_intmax_t.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_pthread/_pthread_once_t.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/pstl_backends/cpu_backends/fill.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/perms.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/in_out_out_result.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_pthread/_pthread_rwlockattr_t.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/fill.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_int16_t.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_trivially_move_constructible.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_timespec.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/data.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_reference_wrapper.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_uintptr_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/generate.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/pointer_to_unary_function.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__concepts/common_reference_with.h:
 
@@ -2461,6 +3243,8 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__utility/pair.h:
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double2x3_precision.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/xlocale/__wctype.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/replace.h:
@@ -2471,19 +3255,11 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/_wctype.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_pthread/_pthread_t.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/_types/_nl_item.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/remove_extent.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/erase_if_container.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/malloc/_ptrcheck.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/u8path.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_endian.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__tuple/tuple_like.h:
 
@@ -2497,6 +3273,8 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_search.h:
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/matrix_double3x3_precision.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/copy_backward.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/pstl_backends/cpu_backends/any_of.h:
@@ -2506,6 +3284,10 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/uses_allocator_construction.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/streambuf:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_seek_set.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/aligned_storage.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/in_in_result.h:
 
@@ -2523,17 +3305,23 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_mismatch.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/libkern/i386/_OSByteOrder.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/unique_ptr.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/not_fn.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_find_if_not.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/copy.h:
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/integer.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/_types/_uint8_t.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/replace_copy_if.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__std_mbstate_t.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_equal_range.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/generate_n.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/_types/_wctrans_t.h:
 
@@ -2541,19 +3329,15 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_object.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/pair.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_move.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_ucontext.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_for_each.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_rsize_t.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/_types/_uintmax_t.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/generate_n.h:
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_int1.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/xlocale/_string.h:
 
@@ -2562,5 +3346,9 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/pstl_fill.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/_xlocale.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/subrange.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/pstl_backend.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_lower_bound.h:
