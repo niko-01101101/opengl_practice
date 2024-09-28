@@ -9,12 +9,13 @@ class Plane : public Object {
 
 public:
   Plane(glm::vec3 position_, glm::vec3 scale_) {
-    vertices = {scale_.x,  scale_.y,  0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
-                scale_.x,  -scale_.y, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
-                -scale_.x, -scale_.y, 0.0f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
-                -scale_.x, scale_.y,  0.0f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f};
+    vertices = {1.0f,  1.0f,  0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+                1.0f,  -1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
+                -1.0f, -1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
+                -1.0f, 1.0f,  0.0f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f};
     setPosition(position_);
     setScale(scale_);
+    setRotation(glm::vec3(0.0001f));
   }
 
   Plane(glm::vec3 position) : Plane(position, glm::vec3(1.0f, 1.0f, 1.0f)) {}

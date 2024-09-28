@@ -18,12 +18,29 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#include "objects/cube.h"
 #include "objects/plane.h"
 
+#include "objects/camera.h"
+
+float deltaTime = 0.0f;
+float globalTime = 0.0f;
+float lastFrame = 0.0f;
+
 Object *objects[] = {
-    new Plane(glm::vec3(0.2, 0.5, 0), glm::vec3(0.5f, 0.5f, 1.0f))};
+    new Cube(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.2f, 0.1f, 0.4f)),
+    new Cube(glm::vec3(1.0f, 0.4f, 0.0f), glm::vec3(0.2f, 0.2f, 0.2f)),
+    new Cube(glm::vec3(-3.0f, -0.2f, 0.0f), glm::vec3(0.1f, 0.1f, 0.1f))};
 
 bool meshMode = false;
+
+// Camera Controls
+bool firstMouse = true;
+float yaw = -90.0f;
+float pitch = 0.0f;
+float lastX = 800.0f / 2.0;
+float lastY = 600.0 / 2.0;
+Camera *camera = new Camera();
 
 void checkShaderCompileStatus(GLuint shader) {
   GLint success;
@@ -49,12 +66,86 @@ static void error_callback(int error, const char *description) {
   fprintf(stderr, "Error: %s\n", description);
 }
 
-static void key_callback(GLFWwindow *window, int key, int scancode, int action,
-                         int mods) {
-  if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
-    glfwSetWindowShouldClose(window, GLFW_TRUE);
-  if (key == GLFW_KEY_M && action == GLFW_PRESS)
-    meshMode = !meshMode;
+class Key {
+  int keyCode;
+  bool pressed = false;
+
+public:
+  Key(int key_) { keyCode = key_; }
+
+  int getKeyCode() { return keyCode; }
+
+  bool getPressed() { return pressed; }
+  void setPressed(bool pressed_) { pressed = pressed_; }
+};
+
+std::vector<Key> keys = {
+    Key(GLFW_KEY_ESCAPE), Key(GLFW_KEY_W), Key(GLFW_KEY_S),
+    Key(GLFW_KEY_A),      Key(GLFW_KEY_D), Key(GLFW_KEY_M),
+};
+
+static void processInput(GLFWwindow *window) {
+  float cameraSpeed = 6.0f * deltaTime;
+
+  for (int key = 0; key < keys.size(); ++key) {
+    Key keyOn = keys[key];
+    int keyCode = keyOn.getKeyCode();
+    if (glfwGetKey(window, keyCode) == GLFW_PRESS) {
+      if (!keyOn.getPressed()) {
+        if (keyCode == GLFW_KEY_ESCAPE)
+          glfwSetWindowShouldClose(window, GLFW_TRUE);
+        if (keyCode == GLFW_KEY_M)
+          meshMode = !meshMode;
+      }
+      if (keyCode == GLFW_KEY_W)
+        camera->setPosition(camera->getPosition() +
+                            camera->getForward() * cameraSpeed);
+      if (keyCode == GLFW_KEY_S)
+        camera->setPosition(camera->getPosition() +
+                            -camera->getForward() * cameraSpeed);
+      if (keyCode == GLFW_KEY_A)
+        camera->setPosition(camera->getPosition() +
+                            -camera->getRight() * cameraSpeed);
+      if (keyCode == GLFW_KEY_D)
+        camera->setPosition(camera->getPosition() +
+                            camera->getRight() * cameraSpeed);
+
+      keyOn.setPressed(true);
+    } else {
+      keyOn.setPressed(false);
+    }
+  }
+}
+
+void mouse_callback(GLFWwindow *window, double xpos, double ypos) {
+  if (firstMouse) {
+    lastX = xpos;
+    lastY = ypos;
+    firstMouse = false;
+  }
+
+  float xoffset = xpos - lastX;
+  float yoffset = lastY - ypos;
+  lastX = xpos;
+  lastY = ypos;
+
+  float sensitivity = 0.1f;
+  xoffset *= sensitivity;
+  yoffset *= sensitivity;
+
+  yaw += xoffset;
+  pitch += yoffset;
+
+  if (pitch > 89.0f)
+    pitch = 89.0f;
+  if (pitch < -89.0f)
+    pitch = -89.0f;
+
+  glm::vec3 direction;
+  direction.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
+  direction.y = sin(glm::radians(pitch));
+  direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
+  camera->setForward(glm::normalize(direction));
 }
 
 unsigned int GetTexture(const char *path) {
@@ -103,6 +194,7 @@ int main(void) {
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+  glfwWindowHint(GLFW_DEPTH_BITS, 24);
   GLFWwindow *window = glfwCreateWindow(640, 480, "DOOM", NULL, NULL);
   if (!window) {
     glfwTerminate();
@@ -110,6 +202,9 @@ int main(void) {
   }
 
   glfwMakeContextCurrent(window);
+  glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
+  glfwSetCursorPosCallback(window, mouse_callback);
 
   // Initialize glad
   if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
@@ -117,22 +212,26 @@ int main(void) {
     exit(EXIT_FAILURE);
   }
 
-  glfwSetKeyCallback(window, key_callback);
-
   // Load Objects
   std::vector<float> vertices;
   std::vector<int> indices;
+  int lastIndiCount = 0;
   for (Object *object : objects) {
+    const int vertStartSize = vertices.size() / 8;
+
     const float *verts = object->getVertices();
     size_t vertSize = object->getVerticesSize();
-    vertices.insert(vertices.end(), verts, verts + vertSize);
-
     vertices.insert(vertices.end(), verts, verts + vertSize);
 
     const int *indis = object->getIndices();
     size_t indisSize = object->getIndicesSize();
 
-    indices.insert(indices.end(), indis, indis + indisSize);
+    object->setID(lastIndiCount);
+
+    for (size_t i = 0; i < indisSize; ++i) {
+      indices.push_back(indis[i] + vertStartSize);
+    }
+    lastIndiCount = indisSize;
   }
 
   // Set up buffer
@@ -199,9 +298,10 @@ int main(void) {
 
   glClearColor(0.0f, 0.2f, 0.4f, 1.0f);
 
-  float speed = 0;
-
+  glEnable(GL_DEPTH_TEST);
+  glDepthFunc(GL_LESS);
   while (!glfwWindowShouldClose(window)) {
+    processInput(window);
 
     // RUNNING Draw
     if (meshMode)
@@ -212,14 +312,21 @@ int main(void) {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     // GLM Perspective
-    float time = glfwGetTime();
+    globalTime = glfwGetTime();
+    deltaTime = globalTime - lastFrame;
 
+    // Camera
     glm::mat4 view = glm::mat4(1.0f);
-    view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+
+    view = glm::translate(view, camera->getPosition());
+    glm::vec3 rot = camera->getRotation();
+    view = glm::rotate(view, glm::radians(rot.x), glm::vec3(1.0f, 0.0f, 0.0f));
+    view = glm::rotate(view, glm::radians(rot.y), glm::vec3(0.0f, 1.0f, 0.0f));
+    view = glm::rotate(view, glm::radians(rot.z), glm::vec3(0.0f, 0.0f, 1.0f));
+    view = camera->LookAt(camera->getPosition() + camera->getForward());
 
     glm::mat4 projection;
-    projection =
-        glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
+    projection = camera->getPerspective();
 
     unsigned int viewLoc = glGetUniformLocation(shaderProgram, "view");
     glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
@@ -231,25 +338,37 @@ int main(void) {
     glBindTexture(GL_TEXTURE_2D, texture);
     glBindVertexArray(VAO);
 
-    // glDrawArrays(GL_TRIANGLES, 0, 36);
-
     // Update Objects
-
     glm::mat4 model = glm::mat4(1.0f);
 
-    speed += 0.001;
     for (Object *object : objects) {
       glm::mat4 model = glm::mat4(1.0f);
       model = glm::translate(model, object->getPosition());
 
+      glm::vec3 rot = object->getRotation();
+      model =
+          glm::rotate(model, glm::radians(rot.x), glm::vec3(1.0f, 0.0f, 0.0f));
+      model =
+          glm::rotate(model, glm::radians(rot.y), glm::vec3(0.0f, 1.0f, 0.0f));
+      model =
+          glm::rotate(model, glm::radians(rot.z), glm::vec3(0.0f, 0.0f, 1.0f));
+
+      model = glm::scale(model, object->getScale());
+
       unsigned int modelLoc = glGetUniformLocation(shaderProgram, "model");
       glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-    }
 
-    glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
+      size_t offset = object->getID() * sizeof(unsigned int);
+      glDrawElements(GL_TRIANGLES, object->getIndicesSize(), GL_UNSIGNED_INT,
+                     (void *)offset);
+
+      object->Draw();
+    }
 
     glfwSwapBuffers(window);
     glfwPollEvents();
+
+    lastFrame = globalTime;
   }
 
   glDeleteBuffers(1, &VBO);

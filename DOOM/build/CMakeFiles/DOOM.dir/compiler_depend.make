@@ -1161,6 +1161,8 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/vector_relational.hpp \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/stb_image.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/loadshaders.cpp \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/camera.h \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/cube.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/object.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/plane.h
 
@@ -1540,6 +1542,8 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_ct_rune_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_posix_availability.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/cube.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_endian.h:
 
@@ -2530,6 +2534,8 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/tuple:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/find_if_not.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/camera.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__compare/compare_partial_order_fallback.h:
 
