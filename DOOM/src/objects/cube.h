@@ -3,31 +3,73 @@
 #include <glm/glm.hpp>
 
 class Cube : public Object {
-  std::array<float, 64> vertices;
-  std::array<int, 36> indices = {0, 1, 2, 0, 2, 3, 4, 5, 6, 4, 6, 7,
-                                 0, 3, 7, 0, 7, 4, 1, 5, 6, 1, 6, 2,
-                                 0, 4, 5, 0, 5, 1, 3, 7, 6, 3, 6, 2};
+  std::array<float, 192> vertices = {
+      // Positions          // Normals            // Texture Coords
+      // Front face
+      -0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, // Bottom-left
+      0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f,  // Bottom-right
+      0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f,   // Top-right
+      -0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f,  // Top-left
+
+      // Back face
+      -0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f, // Bottom-left
+      0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 1.0f, 0.0f,  // Bottom-right
+      0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 1.0f, 1.0f,   // Top-right
+      -0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 1.0f,  // Top-left
+
+      // Left face
+      -0.5f, -0.5f, -0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 0.0f, // Bottom-left
+      -0.5f, -0.5f, 0.5f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f,  // Bottom-right
+      -0.5f, 0.5f, 0.5f, -1.0f, 0.0f, 0.0f, 1.0f, 1.0f,   // Top-right
+      -0.5f, 0.5f, -0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f,  // Top-left
+
+      // Right face
+      0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, // Bottom-left
+      0.5f, -0.5f, 0.5f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f,  // Bottom-right
+      0.5f, 0.5f, 0.5f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f,   // Top-right
+      0.5f, 0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f,  // Top-left
+
+      // Bottom face
+      -0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f, // Bottom-left
+      0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f,  // Bottom-right
+      0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, 1.0f, 1.0f,   // Top-right
+      -0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f,  // Top-left
+
+      // Top face
+      -0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, // Bottom-left
+      0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,  // Bottom-right
+      0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,   // Top-right
+      -0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,  // Top-left
+  };
+
+  std::array<int, 36> indices = {
+      0,  1,  2,  0,  2,  3,  // Front face
+      4,  5,  6,  4,  6,  7,  // Back face
+      8,  9,  10, 8,  10, 11, // Left face
+      12, 13, 14, 12, 14, 15, // Right face
+      16, 17, 18, 16, 18, 19, // Top face
+      20, 21, 22, 20, 22, 23  // Bottom face
+  };
 
   unsigned int texture;
 
 public:
-  Cube(glm::vec3 position_, glm::vec3 scale_) {
-    vertices = {-1.0f, -1.0f, -1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
-                1.0f,  -1.0f, -1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
-                1.0f,  1.0f,  -1.0f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
-                -1.0f, 1.0f,  -1.0f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
-                -1.0f, -1.0f, 1.0f,  1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
-                1.0f,  -1.0f, 1.0f,  1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
-                1.0f,  1.0f,  1.0f,  1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
-                -1.0f, 1.0f,  1.0f,  1.0f, 1.0f, 1.0f, 0.0f, 1.0f};
+  Cube(glm::vec3 position_, glm::vec3 scale_, int texture_) {
     setPosition(position_);
     setScale(scale_);
-    setRotation(glm::vec3(45.0f, 45.0f, 0.0f));
+    setRotation(glm::vec3(0.0f, 0.0f, 0.0f));
+    setTexture(texture_);
   }
 
-  Cube(glm::vec3 position) : Cube(position, glm::vec3(1.0f, 1.0f, 1.0f)) {}
+  Cube(glm::vec3 position_, glm::vec3 scale_, int texture_, glm::vec3 color_)
+      : Cube(position_, scale_, texture_) {
+    setColor(color_);
+  }
 
-  Cube() : Cube(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f, 1.0f, 1.0f)) {}
+  Cube(glm::vec3 position, int texture_)
+      : Cube(position, glm::vec3(1.0f, 1.0f, 1.0f), texture_) {}
+
+  Cube() : Cube(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f, 1.0f, 1.0f), 0) {}
 
   const float *getVertices() override { return vertices.data(); }
   const int *getIndices() override { return indices.data(); }
@@ -35,6 +77,6 @@ public:
   size_t getIndicesSize() override { return indices.size(); }
 
   void Draw() override {
-    setRotation(getRotation() + glm::vec3(0.0f, 0.0f, 0.0f));
+    setRotation(getRotation() + glm::vec3(0.4f, 1.0f, 0.0f));
   }
 };

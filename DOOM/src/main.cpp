@@ -1,3 +1,4 @@
+#include "objects/object.h"
 #include <cstdio>
 #include <string>
 #include <xlocale/_stdio.h>
@@ -9,7 +10,7 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
-#include "loadshaders.cpp"
+#include <map>
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -23,14 +24,25 @@
 
 #include "objects/camera.h"
 
+#include "lights/area.h"
+#include "lights/light.h"
+
+#include "shader.h"
+
 float deltaTime = 0.0f;
 float globalTime = 0.0f;
 float lastFrame = 0.0f;
 
 Object *objects[] = {
-    new Cube(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.2f, 0.1f, 0.4f)),
-    new Cube(glm::vec3(1.0f, 0.4f, 0.0f), glm::vec3(0.2f, 0.2f, 0.2f)),
-    new Cube(glm::vec3(-3.0f, -0.2f, 0.0f), glm::vec3(0.1f, 0.1f, 0.1f))};
+    new Cube(glm::vec3(0.0f, -3.0f, 0.0f), glm::vec3(0.1f, 0.1f, 0.1f), 0),
+    new Cube(glm::vec3(1.0f, 0.4f, 0.0f), glm::vec3(0.2f, 0.2f, 0.2f), 0),
+    new Cube(glm::vec3(3.0f, 0.0f, 0.0f), glm::vec3(2.0f, 2.0f, 2.0f), 0,
+             glm::vec3(0.8f, 0.8f, 1.0f)),
+    new Plane(glm::vec3(0.0f, -5.0f, 0.0f), glm::vec3(10, 10, 10),
+              glm::vec3(-90, 0, 0), 2)};
+
+Light *lights[] = {new AreaLight(glm::vec3(0.0f, -3.0f, 0.0f), 1.0f, 10.0f,
+                                 glm::vec3(1.0f, 1.0f, 1.0f))};
 
 bool meshMode = false;
 
@@ -212,94 +224,68 @@ int main(void) {
     exit(EXIT_FAILURE);
   }
 
-  // Load Objects
-  std::vector<float> vertices;
-  std::vector<int> indices;
-  int lastIndiCount = 0;
+  // Load objects' verticies
+  int currentId = 1;
   for (Object *object : objects) {
-    const int vertStartSize = vertices.size() / 8;
+    unsigned int VAO, VBO, EBO;
 
-    const float *verts = object->getVertices();
-    size_t vertSize = object->getVerticesSize();
-    vertices.insert(vertices.end(), verts, verts + vertSize);
+    glGenVertexArrays(1, &VAO);
+    glGenBuffers(1, &VBO);
 
-    const int *indis = object->getIndices();
-    size_t indisSize = object->getIndicesSize();
+    glGenBuffers(1, &EBO);
 
-    object->setID(lastIndiCount);
+    glBindVertexArray(VAO);
 
-    for (size_t i = 0; i < indisSize; ++i) {
-      indices.push_back(indis[i] + vertStartSize);
-    }
-    lastIndiCount = indisSize;
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBufferData(GL_ARRAY_BUFFER, object->getVerticesSize() * sizeof(float),
+                 object->getVertices(), GL_STATIC_DRAW);
+
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER,
+                 object->getIndicesSize() * sizeof(int), object->getIndices(),
+                 GL_STATIC_DRAW);
+
+    printf("%d\n", VAO);
+    object->setVAO(VAO);
+    object->setVBO(VBO);
+    object->setEBO(EBO);
+    currentId++;
+
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float),
+                          (void *)0);
+    glEnableVertexAttribArray(0);
+
+    // Color attribute
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float),
+                          (void *)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
+
+    // Texture coordinate attribute
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float),
+                          (void *)(6 * sizeof(float)));
+    glEnableVertexAttribArray(2);
+
+    glBindVertexArray(0);
   }
 
-  // Set up buffer
-  unsigned int VAO, VBO, EBO;
-  glGenVertexArrays(1, &VAO);
+  // Load shader
 
-  glGenBuffers(1, &VBO);
-
-  glGenBuffers(1, &EBO);
-
-  glBindVertexArray(VAO);
-  glBindBuffer(GL_ARRAY_BUFFER, VBO);
-
-  glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float),
-               vertices.data(), GL_STATIC_DRAW);
-
-  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-  glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(int),
-               indices.data(), GL_STATIC_DRAW);
-
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void *)0);
-  glEnableVertexAttribArray(0);
-  // Color attribute
-  glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float),
-                        (void *)(3 * sizeof(float)));
-  glEnableVertexAttribArray(1);
-  // Texture coordinate attribute
-  glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float),
-                        (void *)(6 * sizeof(float)));
-  glEnableVertexAttribArray(2);
-
-  // Load shader program
-  GLuint shaderProgram = glCreateProgram();
+  std::map<std::string, Shader> shaders = {
+      {"litShader",
+       Shader("shaders/vertexShader.glsl", "shaders/currentShader.glsl")},
+      {"uncurrentShader",
+       Shader("shaders/vertexShader.glsl", "shaders/unlitShader.glsl")}};
 
   // Load Texture
-  unsigned int texture = GetTexture("textures/smile.png");
-
-  // Load and compile the vertex shader
-  const std::string vertexShaderRef = LoadShader("shaders/vertexShader.glsl");
-  const char *vertexShaderSrc = vertexShaderRef.c_str();
-  GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
-  glShaderSource(vertexShader, 1, &vertexShaderSrc, NULL);
-  glCompileShader(vertexShader);
-  checkShaderCompileStatus(vertexShader);
-
-  const std::string redShaderRef = LoadShader("shaders/redFragShader.glsl");
-  const char *redShader = redShaderRef.c_str();
-  GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-  glShaderSource(fragmentShader, 1, &redShader, NULL);
-  glCompileShader(fragmentShader);
-  checkShaderCompileStatus(fragmentShader);
-
-  // Link shaders to a shader program
-  glAttachShader(shaderProgram, vertexShader);
-  glAttachShader(shaderProgram, fragmentShader);
-  glLinkProgram(shaderProgram);
-  checkProgramLinkStatus(shaderProgram);
-
-  // Clean up shaders as they are no longer needed
-  glDeleteShader(fragmentShader);
-  glDeleteShader(vertexShader);
-
-  glUseProgram(shaderProgram);
+  unsigned int smileTexture = GetTexture("textures/smile.png");
+  unsigned int brickTexture = GetTexture("textures/bricks.jpg");
+  unsigned int logoTexture = GetTexture("textures/logo.png");
 
   glClearColor(0.0f, 0.2f, 0.4f, 1.0f);
 
   glEnable(GL_DEPTH_TEST);
   glDepthFunc(GL_LESS);
+
   while (!glfwWindowShouldClose(window)) {
     processInput(window);
 
@@ -320,28 +306,26 @@ int main(void) {
 
     view = glm::translate(view, camera->getPosition());
     glm::vec3 rot = camera->getRotation();
-    view = glm::rotate(view, glm::radians(rot.x), glm::vec3(1.0f, 0.0f, 0.0f));
-    view = glm::rotate(view, glm::radians(rot.y), glm::vec3(0.0f, 1.0f, 0.0f));
-    view = glm::rotate(view, glm::radians(rot.z), glm::vec3(0.0f, 0.0f, 1.0f));
     view = camera->LookAt(camera->getPosition() + camera->getForward());
 
     glm::mat4 projection;
+
     projection = camera->getPerspective();
 
-    unsigned int viewLoc = glGetUniformLocation(shaderProgram, "view");
-    glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
-
-    unsigned int projectionLoc =
-        glGetUniformLocation(shaderProgram, "projection");
-    glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
-
-    glBindTexture(GL_TEXTURE_2D, texture);
-    glBindVertexArray(VAO);
-
     // Update Objects
-    glm::mat4 model = glm::mat4(1.0f);
-
     for (Object *object : objects) {
+      std::string shaderName = object->getShader();
+      auto it = shaders.find(shaderName);
+      Shader currentShader = it->second;
+      currentShader.use();
+      currentShader.setVec3("lightColor", lights[0]->getColor());
+      currentShader.setVec3("lightPos", lights[0]->getPosition());
+      currentShader.setMat4("projection", projection);
+      currentShader.setMat4("view", view);
+
+      glBindVertexArray(object->getVAO());
+
+      glBindTexture(GL_TEXTURE_2D, object->getTexture());
       glm::mat4 model = glm::mat4(1.0f);
       model = glm::translate(model, object->getPosition());
 
@@ -355,14 +339,18 @@ int main(void) {
 
       model = glm::scale(model, object->getScale());
 
-      unsigned int modelLoc = glGetUniformLocation(shaderProgram, "model");
-      glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+      currentShader.setMat4("model", model);
+      currentShader.setVec3("objectColor", object->getColor());
+      currentShader.setVec3("viewPos", camera->getPosition());
+      currentShader.setInt("textureId", object->getTexture());
 
-      size_t offset = object->getID() * sizeof(unsigned int);
+      // glDrawArrays(GL_TRIANGLES, 0, object->getVerticesSize());
       glDrawElements(GL_TRIANGLES, object->getIndicesSize(), GL_UNSIGNED_INT,
-                     (void *)offset);
+                     0);
 
       object->Draw();
+
+      glBindVertexArray(0);
     }
 
     glfwSwapBuffers(window);
@@ -371,9 +359,24 @@ int main(void) {
     lastFrame = globalTime;
   }
 
-  glDeleteBuffers(1, &VBO);
-  glDeleteVertexArrays(1, &VAO);
-  glDeleteProgram(shaderProgram);
+  // Cleanup
+  // Delete Object Buffers
+  for (Object *object : objects) {
+    unsigned int vao = object->getVAO();
+    unsigned int vbo = object->getVBO();
+    unsigned int ebo = object->getEBO();
+
+    if (vao != 0) {
+      glDeleteVertexArrays(1, &vao);
+    }
+    if (vbo != 0) {
+      glDeleteBuffers(1, &vbo);
+    }
+    if (ebo != 0) {
+      glDeleteBuffers(1, &ebo);
+    }
+  }
+
   glBindVertexArray(0);
 
   glfwDestroyWindow(window);
