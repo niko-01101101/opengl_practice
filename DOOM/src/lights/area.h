@@ -10,6 +10,8 @@ public:
     setPosition(position_);
     setIntensity(intensity_);
     setColor(color_);
+    setDiffuse(getDiffuse() * color_);
+    setSpecular(getDiffuse() * color_);
     distance = distance_;
   }
 };

@@ -1165,6 +1165,7 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/stb_image.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/lights/area.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/lights/light.h \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/material.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/camera.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/cube.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/object.h \
@@ -1914,6 +1915,8 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/float.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_class.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/src/material.h:
 
 /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/scalar_constants.hpp:
 

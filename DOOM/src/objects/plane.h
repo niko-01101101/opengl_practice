@@ -34,6 +34,12 @@ public:
     setTexture(texture_);
   }
 
+  Plane(glm::vec3 position_, glm::vec3 scale_, glm::vec3 rotation_,
+        unsigned int texture_, std::string shader_)
+      : Plane(position_, scale_, rotation_, texture_) {
+    setShader(shader_);
+  }
+
   Plane(glm::vec3 position) : Plane(position, glm::vec3(1.0f, 1.0f, 1.0f)) {}
 
   Plane() : Plane(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f, 1.0f, 1.0f)) {}

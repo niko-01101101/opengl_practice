@@ -77,6 +77,12 @@ public:
     setShader(shader_);
   }
 
+  Cube(glm::vec3 position_, glm::vec3 scale_, int texture_, glm::vec3 color_,
+       std::string shader_, int material_)
+      : Cube(position_, scale_, texture_, color_, shader_) {
+    setMaterial(material_);
+  }
+
   Cube(glm::vec3 position, int texture_)
       : Cube(position, glm::vec3(1.0f, 1.0f, 1.0f), texture_) {}
 
@@ -88,6 +94,6 @@ public:
   size_t getIndicesSize() override { return indices.size(); }
 
   void Draw() override {
-    setRotation(getRotation() + glm::vec3(0.4f, 1.0f, 0.0f));
+    setRotation(getRotation() + glm::vec3(0.0f, 0.0f, 0.0f));
   }
 };

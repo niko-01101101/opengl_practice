@@ -10,7 +10,6 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
-#include <map>
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -30,22 +29,36 @@
 #include "shader.h"
 #include "shaderManager.h"
 
+#include "material.h"
+
 float deltaTime = 0.0f;
 float globalTime = 0.0f;
 float lastFrame = 0.0f;
 
-Object *objects[] = {new Cube(glm::vec3(0.0f, -3.0f, 0.0f),
-                              glm::vec3(0.1f, 0.1f, 0.1f), 0, "unlitShader"),
-                     new Cube(glm::vec3(1.0f, 0.4f, 0.0f),
-                              glm::vec3(0.2f, 0.2f, 0.2f), 0, "litShader"),
-                     new Cube(glm::vec3(3.0f, 0.0f, 0.0f),
-                              glm::vec3(2.0f, 2.0f, 2.0f), 0,
-                              glm::vec3(0.8f, 0.8f, 1.0f), "litShader"),
-                     new Plane(glm::vec3(0.0f, -5.0f, 0.0f),
-                               glm::vec3(10, 10, 10), glm::vec3(-90, 0, 0), 2)};
+Object *objects[] = {
+    new Cube(glm::vec3(0.0f, -3.0f, 0.0f), glm::vec3(0.2f, 0.2f, 0.2f), 0,
+             "unlitShader"),
+    new Cube(glm::vec3(3.0f, 0.0f, 0.0f), glm::vec3(2.0f, 2.0f, 2.0f), 0,
+             glm::vec3(0.2f, 0.2f, 1.0f), "litShader"),
+    new Cube(glm::vec3(0.0f, 0.0f, 20.0f), glm::vec3(8.0f, 8.0f, 8.0f), 3,
+             glm::vec3(1.0f, 1.0f, 1.0f), "litShader"),
+    new Cube(glm::vec3(0.0f, -3.0f, 3.0f), glm::vec3(1.0f, 1.0f, 1.0f), 5,
+             glm::vec3(1.0f), "litShader", 1),
+    new Cube(glm::vec3(-3.0f, 1.0f, 3.0f), glm::vec3(2.0f, 2.0f, 2.0f), 2,
+             glm::vec3(1.0f, 1.0f, 1.0f), "litShader"),
+    new Plane(glm::vec3(0.0f, -5.0f, 0.0f), glm::vec3(10, 10, 10),
+              glm::vec3(-90, 0, 0), 2, "litShader")};
 
-Light *lights[] = {new AreaLight(glm::vec3(0.0f, -3.0f, 0.0f), 1.0f, 10.0f,
-                                 glm::vec3(1.0f, 1.0f, 1.0f))};
+Light *lights[] = {
+  new AreaLight(glm::vec3(0.0f, -3.0f, 0.0f), 1.0f, 10.0f,
+                                 glm::vec3(1.0f, 1.0f, 1.0f))
+//Colored Lights
+  /*new AreaLight(glm::vec3(-5.0f, 3.0f, 0.0f), 1.0f, 10.0f,
+                                 glm::vec3(0.0f, 0.0f, 1.0f)),
+                   new AreaLight(glm::vec3(0.0f, -3.0f, 5.0f), 1.0f, 10.0f,
+                                 glm::vec3(0.0f, 1.0f, 0.0f)),
+                   new AreaLight(glm::vec3(5.0f, 0.0f, 0.0f), 1.0f, 10.0f,
+                                 glm::vec3(1.0f, 0.0f, 0.0f))*/};
 
 bool meshMode = false;
 
@@ -163,6 +176,7 @@ void mouse_callback(GLFWwindow *window, double xpos, double ypos) {
   camera->setForward(glm::normalize(direction));
 }
 
+int textureId = 0;
 unsigned int GetTexture(const char *path) {
   unsigned int texture;
   glGenTextures(1, &texture);
@@ -192,6 +206,9 @@ unsigned int GetTexture(const char *path) {
     glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format,
                  GL_UNSIGNED_BYTE, data);
     glGenerateMipmap(GL_TEXTURE_2D);
+
+    glActiveTexture(GL_TEXTURE + textureId);
+    textureId++;
   } else {
     printf("Failed to load texture.\n");
   }
@@ -210,7 +227,7 @@ int main(void) {
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
   glfwWindowHint(GLFW_DEPTH_BITS, 24);
-  GLFWwindow *window = glfwCreateWindow(640, 480, "DOOM", NULL, NULL);
+  GLFWwindow *window = glfwCreateWindow(640, 480, "Renderer", NULL, NULL);
   if (!window) {
     glfwTerminate();
     exit(EXIT_FAILURE);
@@ -248,7 +265,6 @@ int main(void) {
                  object->getIndicesSize() * sizeof(int), object->getIndices(),
                  GL_STATIC_DRAW);
 
-    printf("%d\n", VAO);
     object->setVAO(VAO);
     object->setVBO(VBO);
     object->setEBO(EBO);
@@ -278,10 +294,18 @@ int main(void) {
   shaderManager.loadShader("unlitShader", "shaders/vertexShader.glsl",
                            "shaders/unlitShader.glsl");
 
+  // Load Materials
+  Material materials[] = {Material(0, 0, glm::vec3(1.0f, 1.0f, 1.0f), 0.1),
+                          Material(5, 6, glm::vec3(1.0f, 1.0f, 1.0f), 1.0)};
+
   // Load Texture
   unsigned int smileTexture = GetTexture("textures/smile.png");
   unsigned int brickTexture = GetTexture("textures/bricks.jpg");
   unsigned int logoTexture = GetTexture("textures/logo.png");
+  unsigned int metalCrateTexture = GetTexture("textures/metal-crate.jpg");
+  unsigned int crateTexture = GetTexture("textures/crate/crate.png");
+  unsigned int crateSpecularTexture =
+      GetTexture("textures/crate/crate-rim.png");
 
   glClearColor(0.0f, 0.2f, 0.4f, 1.0f);
 
@@ -316,15 +340,41 @@ int main(void) {
 
     // Update Objects
     for (Object *object : objects) {
+      Material currentMaterial = materials[object->getMaterial()];
       Shader *currentShader = shaderManager.getShader(object->getShader());
       currentShader->use();
-      currentShader->setVec3("lightColor", lights[0]->getColor());
-      currentShader->setVec3("lightPos", lights[0]->getPosition());
+
+      currentShader->setInt("material.diffuseId", currentMaterial.getDiffuse());
+      currentShader->setInt("material.specularId",
+                            currentMaterial.getSpecular());
+      currentShader->setVec3("material.color", currentMaterial.getColor());
+      currentShader->setFloat("material.shine", currentMaterial.getShine());
+
+      // Load lights
+      int lightId = 0;
+      for (Light *light : lights) {
+        std::string lightStr = ("areaLights[" + std::to_string(lightId) + "]");
+        currentShader->setVec3(lightStr + ".diffuse", light->getDiffuse());
+        currentShader->setVec3(lightStr + ".specular", light->getSpecular());
+        currentShader->setVec3(lightStr + ".position", light->getPosition());
+        currentShader->setFloat(lightStr + ".intensity", light->getIntensity());
+
+        lightId++;
+      }
       currentShader->setMat4("projection", projection);
       currentShader->setMat4("view", view);
 
       glBindVertexArray(object->getVAO());
 
+      glActiveTexture(GL_TEXTURE1);
+      glBindTexture(GL_TEXTURE_2D, currentMaterial.getDiffuse());
+      currentShader->setInt("material.diffuse", 1);
+
+      glActiveTexture(GL_TEXTURE2);
+      glBindTexture(GL_TEXTURE_2D, currentMaterial.getSpecular());
+      currentShader->setInt("material.specular", 2);
+
+      glActiveTexture(GL_TEXTURE0);
       glBindTexture(GL_TEXTURE_2D, object->getTexture());
       glm::mat4 model = glm::mat4(1.0f);
       model = glm::translate(model, object->getPosition());
@@ -340,11 +390,9 @@ int main(void) {
       model = glm::scale(model, object->getScale());
 
       currentShader->setMat4("model", model);
-      currentShader->setVec3("objectColor", object->getColor());
       currentShader->setVec3("viewPos", camera->getPosition());
       currentShader->setInt("textureId", object->getTexture());
 
-      // glDrawArrays(GL_TRIANGLES, 0, object->getVerticesSize());
       glDrawElements(GL_TRIANGLES, object->getIndicesSize(), GL_UNSIGNED_INT,
                      0);
 

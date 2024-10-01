@@ -16,6 +16,7 @@ protected:
   unsigned int VAO;
   unsigned int VBO;
   unsigned int EBO;
+  int material;
 
 public:
   const glm::vec3 getPosition() { return position; }
@@ -27,6 +28,9 @@ public:
 
   unsigned int getTexture() { return texture; }
   void setTexture(unsigned int texture_) { texture = texture_; }
+
+  int getMaterial() { return material; }
+  void setMaterial(int material_) { material = material_; }
 
   glm::vec3 getColor() { return color; }
   void setColor(glm::vec3 color_) { color = color_; }
@@ -48,5 +52,5 @@ public:
   virtual size_t getVerticesSize() { return vertices.size(); }
   virtual size_t getIndicesSize() { return indices.size(); }
 
-  virtual void Draw(){};
+  virtual void Draw() {};
 };

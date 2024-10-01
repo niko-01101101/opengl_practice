@@ -1166,6 +1166,7 @@ CMakeFiles/DOOM.dir/src/main.cpp.o
  /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/stb_image.h
  /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/lights/area.h
  /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/lights/light.h
+ /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/material.h
  /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/camera.h
  /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/cube.h
  /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/object.h
