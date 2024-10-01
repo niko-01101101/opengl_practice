@@ -1169,7 +1169,8 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/cube.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/object.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/plane.h \
-  /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/shader.h
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/shader.h \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/shaderManager.h
 
 
 /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/plane.h:
@@ -1259,6 +1260,8 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/gtc/type_ptr.inl:
 
 /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/quaternion_relational.hpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/src/shaderManager.h:
 
 /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/glm/ext/vector_uint4_sized.hpp:
 

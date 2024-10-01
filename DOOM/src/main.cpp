@@ -28,18 +28,21 @@
 #include "lights/light.h"
 
 #include "shader.h"
+#include "shaderManager.h"
 
 float deltaTime = 0.0f;
 float globalTime = 0.0f;
 float lastFrame = 0.0f;
 
-Object *objects[] = {
-    new Cube(glm::vec3(0.0f, -3.0f, 0.0f), glm::vec3(0.1f, 0.1f, 0.1f), 0),
-    new Cube(glm::vec3(1.0f, 0.4f, 0.0f), glm::vec3(0.2f, 0.2f, 0.2f), 0),
-    new Cube(glm::vec3(3.0f, 0.0f, 0.0f), glm::vec3(2.0f, 2.0f, 2.0f), 0,
-             glm::vec3(0.8f, 0.8f, 1.0f)),
-    new Plane(glm::vec3(0.0f, -5.0f, 0.0f), glm::vec3(10, 10, 10),
-              glm::vec3(-90, 0, 0), 2)};
+Object *objects[] = {new Cube(glm::vec3(0.0f, -3.0f, 0.0f),
+                              glm::vec3(0.1f, 0.1f, 0.1f), 0, "unlitShader"),
+                     new Cube(glm::vec3(1.0f, 0.4f, 0.0f),
+                              glm::vec3(0.2f, 0.2f, 0.2f), 0, "litShader"),
+                     new Cube(glm::vec3(3.0f, 0.0f, 0.0f),
+                              glm::vec3(2.0f, 2.0f, 2.0f), 0,
+                              glm::vec3(0.8f, 0.8f, 1.0f), "litShader"),
+                     new Plane(glm::vec3(0.0f, -5.0f, 0.0f),
+                               glm::vec3(10, 10, 10), glm::vec3(-90, 0, 0), 2)};
 
 Light *lights[] = {new AreaLight(glm::vec3(0.0f, -3.0f, 0.0f), 1.0f, 10.0f,
                                  glm::vec3(1.0f, 1.0f, 1.0f))};
@@ -269,12 +272,11 @@ int main(void) {
   }
 
   // Load shader
-
-  std::map<std::string, Shader> shaders = {
-      {"litShader",
-       Shader("shaders/vertexShader.glsl", "shaders/currentShader.glsl")},
-      {"uncurrentShader",
-       Shader("shaders/vertexShader.glsl", "shaders/unlitShader.glsl")}};
+  ShaderManager shaderManager;
+  shaderManager.loadShader("litShader", "shaders/vertexShader.glsl",
+                           "shaders/litShader.glsl");
+  shaderManager.loadShader("unlitShader", "shaders/vertexShader.glsl",
+                           "shaders/unlitShader.glsl");
 
   // Load Texture
   unsigned int smileTexture = GetTexture("textures/smile.png");
@@ -314,14 +316,12 @@ int main(void) {
 
     // Update Objects
     for (Object *object : objects) {
-      std::string shaderName = object->getShader();
-      auto it = shaders.find(shaderName);
-      Shader currentShader = it->second;
-      currentShader.use();
-      currentShader.setVec3("lightColor", lights[0]->getColor());
-      currentShader.setVec3("lightPos", lights[0]->getPosition());
-      currentShader.setMat4("projection", projection);
-      currentShader.setMat4("view", view);
+      Shader *currentShader = shaderManager.getShader(object->getShader());
+      currentShader->use();
+      currentShader->setVec3("lightColor", lights[0]->getColor());
+      currentShader->setVec3("lightPos", lights[0]->getPosition());
+      currentShader->setMat4("projection", projection);
+      currentShader->setMat4("view", view);
 
       glBindVertexArray(object->getVAO());
 
@@ -339,10 +339,10 @@ int main(void) {
 
       model = glm::scale(model, object->getScale());
 
-      currentShader.setMat4("model", model);
-      currentShader.setVec3("objectColor", object->getColor());
-      currentShader.setVec3("viewPos", camera->getPosition());
-      currentShader.setInt("textureId", object->getTexture());
+      currentShader->setMat4("model", model);
+      currentShader->setVec3("objectColor", object->getColor());
+      currentShader->setVec3("viewPos", camera->getPosition());
+      currentShader->setInt("textureId", object->getTexture());
 
       // glDrawArrays(GL_TRIANGLES, 0, object->getVerticesSize());
       glDrawElements(GL_TRIANGLES, object->getIndicesSize(), GL_UNSIGNED_INT,

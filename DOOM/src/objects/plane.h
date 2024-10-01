@@ -3,26 +3,24 @@
 #include <glm/glm.hpp>
 
 class Plane : public Object {
-  std::array<float, 32> vertices;
+  std::array<float, 32> vertices = {
+      1.0f, 1.0f, 0.0f,  0.0f, 0.0f, 1.0f,  1.0f,  1.0f, 1.0f, -1.0f, 0.0f,
+      0.0f, 0.0f, 1.0f,  1.0f, 0.0f, -1.0f, -1.0f, 0.0f, 0.0f, 0.0f,  1.0f,
+      0.0f, 0.0f, -1.0f, 1.0f, 0.0f, 0.0f,  0.0f,  1.0f, 0.0f, 1.0f};
+  ;
   std::array<int, 6> indices = {0, 1, 3, 1, 2, 3};
   unsigned int texture;
 
 public:
   Plane(glm::vec3 position_, glm::vec3 scale_) {
-    vertices = {1.0f,  1.0f,  0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f,
-                1.0f,  -1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f,
-                -1.0f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
-                -1.0f, 1.0f,  0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f};
+
     setPosition(position_);
     setScale(scale_);
     setRotation(glm::vec3(0.0001f));
   }
 
   Plane(glm::vec3 position_, glm::vec3 scale_, glm::vec3 rotation_) {
-    vertices = {1.0f,  1.0f,  0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f,
-                1.0f,  -1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f,
-                -1.0f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
-                -1.0f, 1.0f,  0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f};
+
     setPosition(position_);
     setScale(scale_);
     setRotation(rotation_);
@@ -30,10 +28,6 @@ public:
 
   Plane(glm::vec3 position_, glm::vec3 scale_, glm::vec3 rotation_,
         unsigned int texture_) {
-    vertices = {1.0f,  1.0f,  0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f,
-                1.0f,  -1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f,
-                -1.0f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
-                -1.0f, 1.0f,  0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f};
     setPosition(position_);
     setScale(scale_);
     setRotation(rotation_);

@@ -66,6 +66,17 @@ public:
     setColor(color_);
   }
 
+  Cube(glm::vec3 position_, glm::vec3 scale_, int texture_, std::string shader_)
+      : Cube(position_, scale_, texture_) {
+    setShader(shader_);
+  }
+
+  Cube(glm::vec3 position_, glm::vec3 scale_, int texture_, glm::vec3 color_,
+       std::string shader_)
+      : Cube(position_, scale_, texture_, color_) {
+    setShader(shader_);
+  }
+
   Cube(glm::vec3 position, int texture_)
       : Cube(position, glm::vec3(1.0f, 1.0f, 1.0f), texture_) {}
 
