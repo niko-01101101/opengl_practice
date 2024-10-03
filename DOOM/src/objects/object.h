@@ -1,5 +1,5 @@
-#include <array>
 #include <glm/glm.hpp>
+#include <vector>
 
 #pragma once
 
@@ -9,9 +9,9 @@ protected:
   glm::vec3 position;
   glm::vec3 scale;
   glm::vec3 rotation;
-  std::array<float, 32> vertices;
-  std::array<int, 6> indices = {0, 1, 3, 1, 2, 3};
-  unsigned int texture = 1;
+  std::vector<float> vertices;
+  std::vector<int> indices = {0, 1, 3, 1, 2, 3};
+  unsigned int texture = 0;
   std::string shader = "unlitShader";
   unsigned int VAO;
   unsigned int VBO;

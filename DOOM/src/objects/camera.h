@@ -1,8 +1,8 @@
-#include <cstdio>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#pragma once
 class Camera {
   glm::mat4 perspective =
       glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);

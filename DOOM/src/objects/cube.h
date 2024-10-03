@@ -1,9 +1,10 @@
 #include "object.h"
 #include <cstdio>
 #include <glm/glm.hpp>
+#include <vector>
 
 class Cube : public Object {
-  std::array<float, 192> vertices = {
+  std::vector<float> vertices = {
       // Positions          // Normals            // Texture Coords
       // Front face
       -0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, // Bottom-left
@@ -42,7 +43,7 @@ class Cube : public Object {
       -0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,  // Top-left
   };
 
-  std::array<int, 36> indices = {
+  std::vector<int> indices = {
       0,  1,  2,  0,  2,  3,  // Front face
       4,  5,  6,  4,  6,  7,  // Back face
       8,  9,  10, 8,  10, 11, // Left face
@@ -94,6 +95,6 @@ public:
   size_t getIndicesSize() override { return indices.size(); }
 
   void Draw() override {
-    setRotation(getRotation() + glm::vec3(0.0f, 0.0f, 0.0f));
+    setRotation(getRotation() + glm::vec3(0.5f, 1.0f, 0.0f));
   }
 };

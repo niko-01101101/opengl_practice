@@ -22,6 +22,7 @@
 #include "objects/plane.h"
 
 #include "objects/camera.h"
+#include "objects/smoothCamera.h"
 
 #include "lights/area.h"
 #include "lights/light.h"
@@ -29,6 +30,7 @@
 #include "shader.h"
 #include "shaderManager.h"
 
+#include "loaders/objFileLoader.cpp"
 #include "material.h"
 
 float deltaTime = 0.0f;
@@ -40,25 +42,27 @@ Object *objects[] = {
              "unlitShader"),
     new Cube(glm::vec3(3.0f, 0.0f, 0.0f), glm::vec3(2.0f, 2.0f, 2.0f), 0,
              glm::vec3(0.2f, 0.2f, 1.0f), "litShader"),
-    new Cube(glm::vec3(0.0f, 0.0f, 20.0f), glm::vec3(8.0f, 8.0f, 8.0f), 3,
+    new Cube(glm::vec3(0.0f, 0.0f, 20.0f), glm::vec3(8.0f, 8.0f, 8.0f), 1,
              glm::vec3(1.0f, 1.0f, 1.0f), "litShader"),
     new Cube(glm::vec3(0.0f, -3.0f, 3.0f), glm::vec3(1.0f, 1.0f, 1.0f), 5,
              glm::vec3(1.0f), "litShader", 1),
     new Cube(glm::vec3(-3.0f, 1.0f, 3.0f), glm::vec3(2.0f, 2.0f, 2.0f), 2,
              glm::vec3(1.0f, 1.0f, 1.0f), "litShader"),
     new Plane(glm::vec3(0.0f, -5.0f, 0.0f), glm::vec3(10, 10, 10),
-              glm::vec3(-90, 0, 0), 2, "litShader")};
+              glm::vec3(-90, 0, 0), 2, "litShader"),
+    LoadObj("models/cat.obj"),
+};
 
 Light *lights[] = {
-  new AreaLight(glm::vec3(0.0f, -3.0f, 0.0f), 1.0f, 10.0f,
-                                 glm::vec3(1.0f, 1.0f, 1.0f))
-//Colored Lights
-  /*new AreaLight(glm::vec3(-5.0f, 3.0f, 0.0f), 1.0f, 10.0f,
-                                 glm::vec3(0.0f, 0.0f, 1.0f)),
-                   new AreaLight(glm::vec3(0.0f, -3.0f, 5.0f), 1.0f, 10.0f,
-                                 glm::vec3(0.0f, 1.0f, 0.0f)),
-                   new AreaLight(glm::vec3(5.0f, 0.0f, 0.0f), 1.0f, 10.0f,
-                                 glm::vec3(1.0f, 0.0f, 0.0f))*/};
+     new AreaLight(glm::vec3(0.0f, -3.0f, 0.0f), 1.0f, 10.0f,
+                                    glm::vec3(1.0f, 1.0f, 1.0f))
+    // Colored Lights
+    /*new AreaLight(glm::vec3(-5.0f, 3.0f, 0.0f), 1.0f, 10.0f,
+                  glm::vec3(0.0f, 0.0f, 1.0f)),
+    new AreaLight(glm::vec3(0.0f, -3.0f, 5.0f), 1.0f, 10.0f,
+                  glm::vec3(0.0f, 1.0f, 0.0f)),
+    new AreaLight(glm::vec3(5.0f, 0.0f, 0.0f), 1.0f, 10.0f,
+                  glm::vec3(1.0f, 0.0f, 0.0f))*/};
 
 bool meshMode = false;
 
@@ -68,7 +72,7 @@ float yaw = -90.0f;
 float pitch = 0.0f;
 float lastX = 800.0f / 2.0;
 float lastY = 600.0 / 2.0;
-Camera *camera = new Camera();
+SmoothCamera *camera = new SmoothCamera();
 
 void checkShaderCompileStatus(GLuint shader) {
   GLint success;
@@ -126,17 +130,16 @@ static void processInput(GLFWwindow *window) {
           meshMode = !meshMode;
       }
       if (keyCode == GLFW_KEY_W)
-        camera->setPosition(camera->getPosition() +
-                            camera->getForward() * cameraSpeed);
+        camera->addVelocity(camera->getForward() * cameraSpeed);
+
       if (keyCode == GLFW_KEY_S)
-        camera->setPosition(camera->getPosition() +
-                            -camera->getForward() * cameraSpeed);
+        camera->addVelocity(-camera->getForward() * cameraSpeed);
+
       if (keyCode == GLFW_KEY_A)
-        camera->setPosition(camera->getPosition() +
-                            -camera->getRight() * cameraSpeed);
+        camera->addVelocity(-camera->getRight() * cameraSpeed);
+
       if (keyCode == GLFW_KEY_D)
-        camera->setPosition(camera->getPosition() +
-                            camera->getRight() * cameraSpeed);
+        camera->addVelocity(camera->getRight() * cameraSpeed);
 
       keyOn.setPressed(true);
     } else {
@@ -309,6 +312,13 @@ int main(void) {
 
   glClearColor(0.0f, 0.2f, 0.4f, 1.0f);
 
+  // Shadow Camera
+  glm::mat4 lightProjection, lightView;
+  glm::mat4 lightSpaceMatrix;
+  float near_plane = 1.0f, far_plane = 7.5f;
+  lightProjection =
+      glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);
+
   glEnable(GL_DEPTH_TEST);
   glDepthFunc(GL_LESS);
 
@@ -329,6 +339,7 @@ int main(void) {
 
     // Camera
     glm::mat4 view = glm::mat4(1.0f);
+    camera->calc();
 
     view = glm::translate(view, camera->getPosition());
     glm::vec3 rot = camera->getRotation();
@@ -358,6 +369,11 @@ int main(void) {
         currentShader->setVec3(lightStr + ".specular", light->getSpecular());
         currentShader->setVec3(lightStr + ".position", light->getPosition());
         currentShader->setFloat(lightStr + ".intensity", light->getIntensity());
+
+        lightView = glm::lookAt(light->getPosition(), glm::vec3(0.0f),
+                                glm::vec3(0.0, 1.0, 0.0));
+        lightSpaceMatrix = lightProjection * lightView;
+        currentShader->setMat4(lightStr + ".shadowMatrix", lightSpaceMatrix);
 
         lightId++;
       }

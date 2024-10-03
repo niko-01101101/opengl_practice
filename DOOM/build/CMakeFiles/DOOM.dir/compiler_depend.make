@@ -1165,16 +1165,23 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/stb_image.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/lights/area.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/lights/light.h \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/mesh.h \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/loaders/objFileLoader.cpp \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/material.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/camera.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/cube.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/object.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/plane.h \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/smoothCamera.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/shader.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/shaderManager.h
 
 
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/smoothCamera.h:
+
 /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/plane.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/src/loaders/objFileLoader.cpp:
 
 /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/lights/area.h:
 
@@ -2753,6 +2760,8 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/search_n.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__mbstate_t.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/mesh.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__compare/compare_strong_order_fallback.h:
 
