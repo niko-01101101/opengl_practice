@@ -1,4 +1,5 @@
 #include <glm/glm.hpp>
+#include <string>
 
 #pragma once
 
@@ -20,4 +21,6 @@ public:
   void setDiffuse(glm::vec3 diffuse_) { diffuse = diffuse_; }
   glm::vec3 getSpecular() { return specular; }
   void setSpecular(glm::vec3 specular_) { specular = specular_; }
+
+  virtual std::string getType() { return "Light"; }
 };

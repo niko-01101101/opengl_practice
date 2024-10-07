@@ -1165,6 +1165,7 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/include/stb_image.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/lights/area.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/lights/light.h \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/lights/spot.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/mesh.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/loaders/objFileLoader.cpp \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/material.h \
@@ -2744,6 +2745,8 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__bit/blsr.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/set_symmetric_difference.h:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/src/lights/spot.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_constructible.h:
 

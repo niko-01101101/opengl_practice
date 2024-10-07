@@ -26,6 +26,7 @@
 
 #include "lights/area.h"
 #include "lights/light.h"
+#include "lights/spot.h"
 
 #include "shader.h"
 #include "shaderManager.h"
@@ -40,29 +41,23 @@ float lastFrame = 0.0f;
 Object *objects[] = {
     new Cube(glm::vec3(0.0f, -3.0f, 0.0f), glm::vec3(0.2f, 0.2f, 0.2f), 0,
              "unlitShader"),
-    new Cube(glm::vec3(3.0f, 0.0f, 0.0f), glm::vec3(2.0f, 2.0f, 2.0f), 0,
-             glm::vec3(0.2f, 0.2f, 1.0f), "litShader"),
-    new Cube(glm::vec3(0.0f, 0.0f, 20.0f), glm::vec3(8.0f, 8.0f, 8.0f), 1,
-             glm::vec3(1.0f, 1.0f, 1.0f), "litShader"),
-    new Cube(glm::vec3(0.0f, -3.0f, 3.0f), glm::vec3(1.0f, 1.0f, 1.0f), 5,
-             glm::vec3(1.0f), "litShader", 1),
-    new Cube(glm::vec3(-3.0f, 1.0f, 3.0f), glm::vec3(2.0f, 2.0f, 2.0f), 2,
-             glm::vec3(1.0f, 1.0f, 1.0f), "litShader"),
     new Plane(glm::vec3(0.0f, -5.0f, 0.0f), glm::vec3(10, 10, 10),
-              glm::vec3(-90, 0, 0), 2, "litShader"),
-    LoadObj("models/cat.obj"),
+              glm::vec3(-90, 0, 0), 3, "litShader"),
+    LoadObj("models/skull.obj", glm::vec3(3, -3.0, 0), glm::vec3(0.2f),
+            glm::vec3(-90, 0, 0), 1),
+    LoadObj("models/cat.obj", glm::vec3(-3, 0, 0), glm::vec3(0.01f),
+            glm::vec3(0, 0, 0), 0),
 };
 
-Light *lights[] = {
-     new AreaLight(glm::vec3(0.0f, -3.0f, 0.0f), 1.0f, 10.0f,
-                                    glm::vec3(1.0f, 1.0f, 1.0f))
-    // Colored Lights
-    /*new AreaLight(glm::vec3(-5.0f, 3.0f, 0.0f), 1.0f, 10.0f,
-                  glm::vec3(0.0f, 0.0f, 1.0f)),
-    new AreaLight(glm::vec3(0.0f, -3.0f, 5.0f), 1.0f, 10.0f,
-                  glm::vec3(0.0f, 1.0f, 0.0f)),
-    new AreaLight(glm::vec3(5.0f, 0.0f, 0.0f), 1.0f, 10.0f,
-                  glm::vec3(1.0f, 0.0f, 0.0f))*/};
+Light *lights[] = {new SpotLight(glm::vec3(0.0f, 3.0f, 0.0f), 1.0f,
+                                 glm::vec3(1.0f, 1.0f, 1.0f), glm::vec3(0, 1, 0), 12.5f),
+                   // Colored Lights
+                   /*new AreaLight(glm::vec3(-5.0f, 3.0f, 0.0f), 1.0f, 10.0f,
+                                 glm::vec3(0.0f, 0.0f, 1.0f)),
+                   new AreaLight(glm::vec3(0.0f, -3.0f, 5.0f), 1.0f, 10.0f,
+                                 glm::vec3(0.0f, 1.0f, 0.0f)),
+                   new AreaLight(glm::vec3(5.0f, 0.0f, 0.0f), 1.0f, 10.0f,
+                                 glm::vec3(1.0f, 0.0f, 0.0f))*/};
 
 bool meshMode = false;
 
@@ -302,6 +297,7 @@ int main(void) {
                           Material(5, 6, glm::vec3(1.0f, 1.0f, 1.0f), 1.0)};
 
   // Load Texture
+  unsigned int skullTexture = GetTexture("textures/skull.jpg");
   unsigned int smileTexture = GetTexture("textures/smile.png");
   unsigned int brickTexture = GetTexture("textures/bricks.jpg");
   unsigned int logoTexture = GetTexture("textures/logo.png");
@@ -364,16 +360,28 @@ int main(void) {
       // Load lights
       int lightId = 0;
       for (Light *light : lights) {
-        std::string lightStr = ("areaLights[" + std::to_string(lightId) + "]");
+        std::string lightStr = ("lights[" + std::to_string(lightId) + "]");
+
         currentShader->setVec3(lightStr + ".diffuse", light->getDiffuse());
         currentShader->setVec3(lightStr + ".specular", light->getSpecular());
         currentShader->setVec3(lightStr + ".position", light->getPosition());
         currentShader->setFloat(lightStr + ".intensity", light->getIntensity());
 
-        lightView = glm::lookAt(light->getPosition(), glm::vec3(0.0f),
-                                glm::vec3(0.0, 1.0, 0.0));
-        lightSpaceMatrix = lightProjection * lightView;
-        currentShader->setMat4(lightStr + ".shadowMatrix", lightSpaceMatrix);
+        if (light->getType() == "SpotLight") {
+          currentShader->setInt(lightStr + ".type", 1);
+
+          SpotLight *spotlight = dynamic_cast<SpotLight *>(light);
+          currentShader->setVec3(lightStr + ".direction",
+                                 spotlight->getDirection());
+          currentShader->setFloat(
+              lightStr + ".cutOff",
+              glm::cos(glm::radians(spotlight->getCutOff())));
+          currentShader->setFloat("light.constant", 1.0f);
+          currentShader->setFloat("light.linear", 0.09f);
+          currentShader->setFloat("light.quadratic", 0.032f);
+        } else {
+          currentShader->setInt(lightStr + ".type", 0);
+        }
 
         lightId++;
       }

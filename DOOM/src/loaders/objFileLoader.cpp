@@ -1,4 +1,5 @@
 #include "../objects/mesh.h"
+#include <cstdlib>
 #include <fstream>
 #include <glm/glm.hpp>
 #include <iostream>
@@ -7,7 +8,7 @@
 #include <vector>
 
 struct Vertex {
-  float x, y, z, nx, ny, nz, tx, ty;
+  float x, y, z, nx, ny, nz, u, v;
 };
 
 std::vector<glm::vec3> CalculateNormals(std::vector<int> indices,
@@ -18,6 +19,12 @@ std::vector<glm::vec3> CalculateNormals(std::vector<int> indices,
     int i0 = indices[indexOn];
     int i1 = indices[indexOn + 1];
     int i2 = indices[indexOn + 2];
+
+    if (i0 >= vertices.size() || i1 >= vertices.size() ||
+        i2 >= vertices.size() || i0 < 0 || i1 < 0 || i2 < 0) {
+      std::cerr << "Error: Invalid index in indices array." << std::endl;
+      return {};
+    }
 
     glm::vec3 v0 = glm::vec3(vertices[i0].x, vertices[i0].y, vertices[i0].z);
     glm::vec3 v1 = glm::vec3(vertices[i1].x, vertices[i1].y, vertices[i1].z);
@@ -35,9 +42,12 @@ std::vector<glm::vec3> CalculateNormals(std::vector<int> indices,
   return vertexNormals;
 }
 
-Mesh *LoadObj(const std::string &filePath) {
+Mesh *LoadObj(const std::string &filePath, glm::vec3 position, glm::vec3 scale,
+              glm::vec3 rotation, unsigned int texture) {
   std::vector<Vertex> vertices;
   std::vector<int> indices;
+  std::vector<glm::vec2> texCoords;
+  std::vector<glm::vec3> normals;
   std::ifstream file(filePath);
   if (!file.is_open()) {
     fprintf(stderr, "Failed to open obj file: %s\n", filePath.c_str());
@@ -45,8 +55,6 @@ Mesh *LoadObj(const std::string &filePath) {
   }
 
   std::string line;
-  int normalOn = 0;
-  int texCoordOn = 0;
   while (std::getline(file, line)) {
     std::istringstream iss(line);
 
@@ -59,66 +67,101 @@ Mesh *LoadObj(const std::string &filePath) {
       glm::vec3 normal;
       char prefix;
       iss >> prefix >> normal.x >> normal.y >> normal.z;
-      vertices[normalOn].nx = normal.x;
-      vertices[normalOn].ny = normal.y;
-      vertices[normalOn].nz = normal.z;
-
-      normalOn++;
-    } else if (line.substr(0, 2) == "vt ") {
+      normals.push_back(normal);
+    } else if (line.substr(0, 2) == "vt") {
       glm::vec2 texCoord;
-      char prefix;
+
+      std::string prefix;
       iss >> prefix >> texCoord.x >> texCoord.y;
-      vertices[texCoordOn].tx = texCoord.x;
-      vertices[texCoordOn].ty = texCoord.y;
-      texCoordOn++;
+
+      texCoords.push_back(texCoord);
     } else if (line.substr(0, 2) == "f ") {
 
       std::string vertexIndexStr;
       std::istringstream vertexStream(line.substr(2));
 
+      std::vector<int> faceIndices;
+
       while (vertexStream >> vertexIndexStr) {
         std::istringstream indexStream(vertexIndexStr);
-        std::string indexStr;
+        std::string indexStr, texStr, normStr;
 
         std::getline(indexStream, indexStr, '/');
+        std::getline(indexStream, texStr, '/');
+        std::getline(indexStream, normStr, '/');
 
-        if (!indexStr.empty()) {
-          try {
-            int vertexIndex = std::stoi(indexStr) - 1;
-            indices.push_back(vertexIndex);
-          } catch (const std::invalid_argument &e) {
-            std::cerr << "Invalid vertex index: " << indexStr
-                      << " in line: " << line << std::endl;
+        try {
+          int vertexIndex = std::stoi(indexStr) - 1;
+          faceIndices.push_back(vertexIndex);
+
+          if (texCoords.size() > 0) {
+            int texIndex = std::stoi(texStr) - 1;
+            vertices[vertexIndex].u = texCoords[texIndex].x;
+            vertices[vertexIndex].v = texCoords[texIndex].y;
           }
-        } else {
-          std::cerr << "Warning: Empty vertex index found in line: " << line
-                    << std::endl;
+
+          if (normals.size() > 0) {
+            int normIndex = std::stoi(normStr) - 1;
+            vertices[vertexIndex].nx = normals[normIndex].x;
+            vertices[vertexIndex].ny = normals[normIndex].y;
+            vertices[vertexIndex].nz = normals[normIndex].z;
+          }
+
+        } catch (const std::invalid_argument &e) {
+          std::cerr << "Invalid vertex index: " << indexStr
+                    << " in line: " << line << std::endl;
         }
+      }
+
+      if (faceIndices.size() == 4) {
+        // Process as a quad (split into two triangles)
+        indices.push_back(faceIndices[0]);
+        indices.push_back(faceIndices[1]);
+        indices.push_back(faceIndices[2]);
+
+        indices.push_back(faceIndices[0]);
+        indices.push_back(faceIndices[2]);
+        indices.push_back(faceIndices[3]);
+      } else if (faceIndices.size() == 3) {
+        // Process as a triangle
+        indices.push_back(faceIndices[0]);
+        indices.push_back(faceIndices[1]);
+        indices.push_back(faceIndices[2]);
+      } else {
+        std::cerr << "Warning: Face has " << faceIndices.size()
+                  << " vertices, not 3 or 4." << std::endl;
       }
     }
   }
 
   std::vector<float> outVertices;
-  std::vector<glm::vec3> normals = CalculateNormals(indices, vertices);
+  bool normalsIncluded = normals.size() > 0;
+  if (!normalsIncluded)
+    normals = CalculateNormals(indices, vertices);
 
   int vertexOn = 0;
+  std::cout << "TS: " << texCoords.size() << " VS: " << vertices.size()
+            << " IS: " << indices.size() << "\n";
 
   for (const Vertex &vertex : vertices) {
 
-    glm::vec3 calcNormal = normals[vertexOn];
+    glm::vec3 calcNormal = normalsIncluded
+                               ? glm::vec3(vertex.nx, vertex.ny, vertex.nz)
+                               : normals[vertexOn];
 
+    // Funny
+    // float off = rand() / 1000000000.0f * 0.2f;
     outVertices.push_back(vertex.x);
     outVertices.push_back(vertex.y);
     outVertices.push_back(vertex.z);
     outVertices.push_back(calcNormal.x);
     outVertices.push_back(calcNormal.y);
     outVertices.push_back(calcNormal.z);
-    outVertices.push_back(vertex.tx);
-    outVertices.push_back(vertex.ty);
+    outVertices.push_back(vertex.u);
+    outVertices.push_back(vertex.v);
 
     vertexOn++;
   }
 
-  return new Mesh(outVertices, indices, glm::vec3(0.0f, -5.0f, -3.0f),
-                  glm::vec3(0.01f));
+  return new Mesh(outVertices, indices, position, scale, rotation, texture);
 }

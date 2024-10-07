@@ -19,10 +19,13 @@ public:
   };
 
   Mesh(std::vector<float> vertices_, std::vector<int> indices_,
-       glm::vec3 position_, glm::vec3 scale_)
+       glm::vec3 position_, glm::vec3 scale_, glm::vec3 rotation_,
+       unsigned int texture_)
       : Mesh(vertices_, indices_) {
     setScale(scale_);
     setPosition(position_);
+    setRotation(rotation_);
+    setTexture(texture_);
   };
 
   const float *getVertices() override { return vertices.data(); }
@@ -30,7 +33,5 @@ public:
   size_t getVerticesSize() override { return vertices.size(); }
   size_t getIndicesSize() override { return indices.size(); }
 
-  void Draw() override {
-    setRotation(getRotation() + glm::vec3(0.0f, 1.0f, 0.0f));
-  }
+  void Draw() override {}
 };

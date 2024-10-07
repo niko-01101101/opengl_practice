@@ -14,4 +14,6 @@ public:
     setSpecular(getDiffuse() * color_);
     distance = distance_;
   }
+
+  std::string getType() override { return "AreaLight"; }
 };
