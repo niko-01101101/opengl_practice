@@ -39,18 +39,17 @@ float globalTime = 0.0f;
 float lastFrame = 0.0f;
 
 Object *objects[] = {
-    new Cube(glm::vec3(0.0f, -3.0f, 0.0f), glm::vec3(0.2f, 0.2f, 0.2f), 0,
-             "unlitShader"),
+    // new Cube(glm::vec3(0.0f, -3.0f, 0.0f), glm::vec3(0.2f, 0.2f, 0.2f), 0,
+    //         "unlitShader"),
     new Plane(glm::vec3(0.0f, -5.0f, 0.0f), glm::vec3(10, 10, 10),
               glm::vec3(-90, 0, 0), 3, "litShader"),
-    LoadObj("models/skull.obj", glm::vec3(3, -3.0, 0), glm::vec3(0.2f),
-            glm::vec3(-90, 0, 0), 1),
-    LoadObj("models/cat.obj", glm::vec3(-3, 0, 0), glm::vec3(0.01f),
-            glm::vec3(0, 0, 0), 0),
+    new Cube(glm::vec3(0), glm ::vec3(1), 6, glm::vec3(1), "litShader", 1),
+
 };
 
-Light *lights[] = {new SpotLight(glm::vec3(0.0f, 3.0f, 0.0f), 1.0f,
-                                 glm::vec3(1.0f, 1.0f, 1.0f), glm::vec3(0, 1, 0), 12.5f),
+float ambient = 0.2f;
+Light *lights[] = {new SpotLight(glm::vec3(0.0f, 6.0f, 0.0f), 1.0f,
+                                 glm::vec3(1.0f, 1.0f, 1.0f), glm::vec3(0, -90, 0), 12.5f),
                    // Colored Lights
                    /*new AreaLight(glm::vec3(-5.0f, 3.0f, 0.0f), 1.0f, 10.0f,
                                  glm::vec3(0.0f, 0.0f, 1.0f)),
@@ -294,7 +293,7 @@ int main(void) {
 
   // Load Materials
   Material materials[] = {Material(0, 0, glm::vec3(1.0f, 1.0f, 1.0f), 0.1),
-                          Material(5, 6, glm::vec3(1.0f, 1.0f, 1.0f), 1.0)};
+                          Material(6, 7, glm::vec3(1.0f, 1.0f, 1.0f), 1.0)};
 
   // Load Texture
   unsigned int skullTexture = GetTexture("textures/skull.jpg");
@@ -357,6 +356,8 @@ int main(void) {
       currentShader->setVec3("material.color", currentMaterial.getColor());
       currentShader->setFloat("material.shine", currentMaterial.getShine());
 
+      currentShader->setVec3("ambient", glm::vec3(ambient));
+
       // Load lights
       int lightId = 0;
       for (Light *light : lights) {
@@ -373,12 +374,13 @@ int main(void) {
           SpotLight *spotlight = dynamic_cast<SpotLight *>(light);
           currentShader->setVec3(lightStr + ".direction",
                                  spotlight->getDirection());
-          currentShader->setFloat(
-              lightStr + ".cutOff",
-              glm::cos(glm::radians(spotlight->getCutOff())));
-          currentShader->setFloat("light.constant", 1.0f);
-          currentShader->setFloat("light.linear", 0.09f);
-          currentShader->setFloat("light.quadratic", 0.032f);
+          currentShader->setFloat(lightStr + ".cutOff",
+                                  glm::cos(glm::radians(12.0f)));
+          currentShader->setFloat(lightStr + ".outerCutOff",
+                                  glm::cos(glm::radians(17.5f)));
+          currentShader->setFloat(lightStr + ".constant", 1.0f);
+          currentShader->setFloat(lightStr + ".linear", 0.09f);
+          currentShader->setFloat(lightStr + ".quadratic", 0.032f);
         } else {
           currentShader->setInt(lightStr + ".type", 0);
         }
