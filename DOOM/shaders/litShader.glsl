@@ -16,7 +16,6 @@ struct Light{
   vec3 diffuse;
   vec3 specular;
   float intensity;
-  mat4 shadowMatrix;
 
   //Spot Light
   vec3 direction;
@@ -25,6 +24,10 @@ struct Light{
   float constant;
   float linear;
   float quadratic;
+  int shadowMap;
+  int depthMap;
+
+  vec4 lightSpaceMatrix;
 };
 
 out vec4 FragColor;

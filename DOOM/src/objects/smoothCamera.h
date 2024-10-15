@@ -7,7 +7,7 @@ class SmoothCamera : public Camera {
   float drag = 0.9f;
 
 public:
-  *SmoothCamera() {}
+  *SmoothCamera(float width, float height) : Camera(width, height) {}
   void addVelocity(glm::vec3 velocity_) { velocity += velocity_; }
   void calc() {
     setPosition(getPosition() + velocity * speed);

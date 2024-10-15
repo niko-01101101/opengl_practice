@@ -20,6 +20,15 @@ public:
   glm::vec3 getRotation() { return rotation; }
   void setRotation(glm::vec3 rotation_) { rotation = rotation_; }
 
+  Camera(float width, float height) {
+    perspective =
+        glm::perspective(glm::radians(45.0f), width / height, 0.1f, 100.0f);
+  }
+
+  void setPerspective(float fov, float ratio, float near, float far) {
+    perspective = glm::perspective(glm::radians(fov), ratio, near, far);
+  }
+
   glm::vec3 getForward() { return forward; }
   void setForward(glm::vec3 forward_) { forward = forward_; }
   glm::vec3 getUp() { return up; }

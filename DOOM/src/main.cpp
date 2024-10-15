@@ -38,12 +38,17 @@ float deltaTime = 0.0f;
 float globalTime = 0.0f;
 float lastFrame = 0.0f;
 
+const unsigned int SCR_WIDTH = 800;
+const unsigned int SCR_HEIGHT = 600;
+
 Object *objects[] = {
     // new Cube(glm::vec3(0.0f, -3.0f, 0.0f), glm::vec3(0.2f, 0.2f, 0.2f), 0,
     //         "unlitShader"),
     new Plane(glm::vec3(0.0f, -5.0f, 0.0f), glm::vec3(10, 10, 10),
-              glm::vec3(-90, 0, 0), 3, "litShader"),
-    new Cube(glm::vec3(0), glm ::vec3(1), 6, glm::vec3(1), "litShader", 1),
+              glm::vec3(-90, 0, 0), 3, "debugDepthShader"),
+    // new Cube(glm::vec3(0), glm ::vec3(1), 6, glm::vec3(1), "litShader", 1),
+    LoadObj("models/sphere.obj", glm::vec3(0, 0, 0), glm::vec3(0.4f),
+            glm::vec3(0), 0)
 
 };
 
@@ -66,7 +71,7 @@ float yaw = -90.0f;
 float pitch = 0.0f;
 float lastX = 800.0f / 2.0;
 float lastY = 600.0 / 2.0;
-SmoothCamera *camera = new SmoothCamera();
+SmoothCamera *camera = new SmoothCamera(SCR_WIDTH, SCR_HEIGHT);
 
 void checkShaderCompileStatus(GLuint shader) {
   GLint success;
@@ -214,6 +219,10 @@ unsigned int GetTexture(const char *path) {
   return texture;
 }
 
+void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
+  glViewport(0, 0, width, height);
+}
+
 int main(void) {
   glfwSetErrorCallback(error_callback);
 
@@ -224,7 +233,8 @@ int main(void) {
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
   glfwWindowHint(GLFW_DEPTH_BITS, 24);
-  GLFWwindow *window = glfwCreateWindow(640, 480, "Renderer", NULL, NULL);
+  GLFWwindow *window =
+      glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Renderer", NULL, NULL);
   if (!window) {
     glfwTerminate();
     exit(EXIT_FAILURE);
@@ -240,6 +250,8 @@ int main(void) {
     fprintf(stderr, "Failed to initialize GLAD\n");
     exit(EXIT_FAILURE);
   }
+
+  glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
   // Load objects' verticies
   int currentId = 1;
@@ -290,6 +302,10 @@ int main(void) {
                            "shaders/litShader.glsl");
   shaderManager.loadShader("unlitShader", "shaders/vertexShader.glsl",
                            "shaders/unlitShader.glsl");
+  shaderManager.loadShader("depthShader", "shaders/depthVertexShader.glsl",
+                           "shaders/depthFragShader.glsl");
+  shaderManager.loadShader("debugDepthShader", "shaders/vertexShader.glsl",
+                           "shaders/debugDepthMapFrag.glsl");
 
   // Load Materials
   Material materials[] = {Material(0, 0, glm::vec3(1.0f, 1.0f, 1.0f), 0.1),
@@ -305,14 +321,28 @@ int main(void) {
   unsigned int crateSpecularTexture =
       GetTexture("textures/crate/crate-rim.png");
 
-  glClearColor(0.0f, 0.2f, 0.4f, 1.0f);
+  const unsigned int SHADOW_WIDTH = 1024, SHADOW_HEIGHT = 1024;
+  unsigned int depthMapFBO;
+  glGenFramebuffers(1, &depthMapFBO);
 
-  // Shadow Camera
-  glm::mat4 lightProjection, lightView;
-  glm::mat4 lightSpaceMatrix;
-  float near_plane = 1.0f, far_plane = 7.5f;
-  lightProjection =
-      glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);
+  unsigned int depthMap;
+  glGenTextures(1, &depthMap);
+  glBindTexture(GL_TEXTURE_2D, depthMap);
+  glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, SHADOW_WIDTH,
+               SHADOW_HEIGHT, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
+  float borderColor[] = {1.0, 1.0, 1.0, 1.0};
+  glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);
+  // attach depth texture as FBO's depth buffer
+  glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
+  glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D,
+                         depthMap, 0);
+  glDrawBuffer(GL_NONE);
+  glReadBuffer(GL_NONE);
+  glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
   glEnable(GL_DEPTH_TEST);
   glDepthFunc(GL_LESS);
@@ -326,6 +356,59 @@ int main(void) {
     else
       glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
+    glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    // ShadowMap Creation
+    glm::mat4 lightProjection, lightView;
+    glm::mat4 lightSpaceMatrix;
+    float near_plane = 1.0f, far_plane = 7.5f;
+    lightProjection =
+        glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);
+    lightView = glm::lookAt(lights[0]->getPosition(), glm::vec3(0.0f),
+                            glm::vec3(0.0, 1.0, 0.0));
+    lightSpaceMatrix = lightProjection * lightView;
+    glViewport(0, 0, SHADOW_WIDTH, SHADOW_HEIGHT);
+    glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
+    glClear(GL_DEPTH_BUFFER_BIT);
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, brickTexture);
+    Shader *depthShader = shaderManager.getShader("depthShader");
+    depthShader->use();
+    depthShader->setMat4("lightSpaceMatrix", lightSpaceMatrix);
+
+    // Quick Render
+    for (Object *object : objects) {
+      glm::mat4 model = glm::mat4(1.0f);
+      model = glm::translate(model, object->getPosition());
+
+      glm::vec3 rot = object->getRotation();
+      model =
+          glm::rotate(model, glm::radians(rot.x), glm::vec3(1.0f, 0.0f, 0.0f));
+      model =
+          glm::rotate(model, glm::radians(rot.y), glm::vec3(0.0f, 1.0f, 0.0f));
+      model =
+          glm::rotate(model, glm::radians(rot.z), glm::vec3(0.0f, 0.0f, 1.0f));
+
+      model = glm::scale(model, object->getScale());
+
+      depthShader->setMat4("model", model);
+
+      glBindVertexArray(object->getVAO());
+
+      glDrawElements(GL_TRIANGLES, object->getIndicesSize(), GL_UNSIGNED_INT,
+                     0);
+
+      glBindVertexArray(0);
+    }
+    glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+    // reset viewport
+    int width, height;
+    glfwGetWindowSize(window, &width, &height);
+    float aspectRatio = (float)width / (float)height;
+    glViewport(0, 0, width * 2, height * 2);
+    glClearColor(0.0f, 0.2f, 0.4f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     // GLM Perspective
@@ -334,6 +417,9 @@ int main(void) {
 
     // Camera
     glm::mat4 view = glm::mat4(1.0f);
+
+    camera->setPerspective(45.0f, aspectRatio, 0.1f, 100.0f);
+
     camera->calc();
 
     view = glm::translate(view, camera->getPosition());
@@ -349,6 +435,7 @@ int main(void) {
       Material currentMaterial = materials[object->getMaterial()];
       Shader *currentShader = shaderManager.getShader(object->getShader());
       currentShader->use();
+      currentShader->setMat4("lightSpaceMatrix", lightSpaceMatrix);
 
       currentShader->setInt("material.diffuseId", currentMaterial.getDiffuse());
       currentShader->setInt("material.specularId",
@@ -361,6 +448,7 @@ int main(void) {
       // Load lights
       int lightId = 0;
       for (Light *light : lights) {
+
         std::string lightStr = ("lights[" + std::to_string(lightId) + "]");
 
         currentShader->setVec3(lightStr + ".diffuse", light->getDiffuse());
@@ -369,6 +457,12 @@ int main(void) {
         currentShader->setFloat(lightStr + ".intensity", light->getIntensity());
 
         if (light->getType() == "SpotLight") {
+          lightView = glm::lookAt(light->getPosition(), glm::vec3(0.0f),
+                                  glm::vec3(0.0, 1.0, 0.0));
+          lightSpaceMatrix = lightProjection * lightView;
+          currentShader->setMat4(lightStr + "lightSpaceMatrix",
+                                 lightSpaceMatrix);
+
           currentShader->setInt(lightStr + ".type", 1);
 
           SpotLight *spotlight = dynamic_cast<SpotLight *>(light);
@@ -401,6 +495,7 @@ int main(void) {
       currentShader->setInt("material.specular", 2);
 
       glActiveTexture(GL_TEXTURE0);
+
       glBindTexture(GL_TEXTURE_2D, object->getTexture());
       glm::mat4 model = glm::mat4(1.0f);
       model = glm::translate(model, object->getPosition());
