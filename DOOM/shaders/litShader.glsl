@@ -24,8 +24,6 @@ struct Light{
   float constant;
   float linear;
   float quadratic;
-  int shadowMap;
-  int depthMap;
 
   vec4 lightSpaceMatrix;
 };
@@ -35,8 +33,10 @@ out vec4 FragColor;
 in vec2 TexCoord;
 in vec3 FragPos;
 in vec3 Normal;
+in vec4 FragPosLightSpace;
 
 uniform sampler2D ourTexture;
+uniform sampler2D depthMap;
 uniform vec3 ambient;
 
 uniform vec3 viewPos;
@@ -47,6 +47,8 @@ uniform Material material;
 vec3 CalcAreaLight(Light light, vec3 normal, vec3 fragPos,  vec3 viewDir);
 vec3 CalcSpotLight(Light light, vec3 normal,  vec3 viewDir);
 
+float CalcPointShadow(Light light, vec4 fragPosLightSpace);
+
 #define LIGHTS 3
 uniform Light lights[LIGHTS];
 
@@ -54,6 +56,7 @@ void main()
 {
     vec3 norm = normalize(Normal);
     vec3 viewDir = normalize(viewPos - FragPos);
+    float shadow = 0.0;
 
     vec3 result = vec3(0.0f);
     for(int i = 0; i < LIGHTS; i++) {
@@ -61,10 +64,13 @@ void main()
 
       if(lightOn.type == 0)
         result += CalcAreaLight(lightOn, norm, FragPos, viewDir);
-      else if(lightOn.type == 1)
+      else if(lightOn.type == 1){
         result += CalcSpotLight(lightOn, norm, viewDir);
+        shadow = CalcPointShadow(lightOn, FragPosLightSpace);
+      }
     }
 
+    result *= (1.0 - shadow);
     result += ambient;
 
     if(textureId != 0){
@@ -78,35 +84,45 @@ void main()
     }
 }
 
-/*float ShadowCalculation(vec4 fragPosLightSpace)
+float CalcPointShadow(Light light, vec4 fragPosLightSpace)
 {
+    // Perform perspective divide to transform to normalized device coordinates
     vec3 projCoords = fragPosLightSpace.xyz / fragPosLightSpace.w;
-    projCoords = projCoords * 0.5 + 0.5;
-    float closestDepth = texture(shadowMap, projCoords.xy).r; 
-    float currentDepth = projCoords.z;
-    vec3 normal = normalize(fs_in.Normal);
-    vec3 lightDir = normalize(lightPos - fs_in.FragPos);
-    float bias = max(0.05 * (1.0 - dot(normal, lightDir)), 0.005);
 
+    // Transform to [0, 1] range from [-1, 1]
+    projCoords = projCoords * 0.5 + 0.5;
+
+    // Get the closest depth value from the light's perspective (from the shadow map)
+    float closestDepth = texture(depthMap, projCoords.xy).r; 
+
+    // Get the current depth of the fragment in light space
+    float currentDepth = projCoords.z;
+
+    // Bias to avoid shadow acne
+    vec3 lightDir = normalize(light.position - FragPos);
+    float bias = max(0.05 * (1.0 - dot(normalize(Normal), lightDir)), 0.005);
+
+    // PCF (Percentage Closer Filtering) to smooth shadows
     float shadow = 0.0;
-    vec2 texelSize = 1.0 / textureSize(shadowMap, 0);
+    
+    vec2 texelSize = 1.0 / textureSize(depthMap, 0);
     for(int x = -1; x <= 1; ++x)
     {
         for(int y = -1; y <= 1; ++y)
         {
-            float pcfDepth = texture(shadowMap, projCoords.xy + vec2(x, y) * texelSize).r; 
+            float pcfDepth = texture(depthMap, projCoords.xy + vec2(x, y) * texelSize).r; 
             shadow += currentDepth - bias > pcfDepth  ? 1.0 : 0.0;        
         }    
     }
-    shadow /= 9.0;
-    
-    // keep the shadow at 0.0 when outside the far_plane region of the light's frustum.
+    shadow /= 10.0;
+
+
+    // If the fragment is outside the light's far plane, it is not in shadow
     if(projCoords.z > 1.0)
         shadow = 0.0;
-        
-    return shadow;
-}*/
 
+    return shadow;
+}
 
 //Lights
 vec3 CalcAreaLight(Light light, vec3 normal, vec3 fragPos, vec3 viewDir) {
