@@ -14,18 +14,18 @@ public:
   Mesh(std::vector<float> vertices_, std::vector<int> indices_) {
     vertices = vertices_;
     indices = indices_;
-    setShader("litShader");
     setMaterial(0);
   };
 
   Mesh(std::vector<float> vertices_, std::vector<int> indices_,
        glm::vec3 position_, glm::vec3 scale_, glm::vec3 rotation_,
-       unsigned int texture_)
+       unsigned int texture_, std::string shader_)
       : Mesh(vertices_, indices_) {
     setScale(scale_);
     setPosition(position_);
     setRotation(rotation_);
     setTexture(texture_);
+    setShader(shader_);
   };
 
   const float *getVertices() override { return vertices.data(); }

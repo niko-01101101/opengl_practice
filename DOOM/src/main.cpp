@@ -42,17 +42,16 @@ const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
 Object *objects[] = {
-    new Cube(glm::vec3(0.0f, 10, 0.0f), glm::vec3(0.2f, 0.2f, 0.2f), 0,
-             "unlitShader"),
+    LoadObj("models/sphere.obj", glm::vec3(0.01f), glm::vec3(60),
+            glm::vec3(0), 8, "unlitShader"),
     new Plane(glm::vec3(0.0f, -5.0f, 0.0f), glm::vec3(10, 10, 10),
               glm::vec3(-90, 0, 0), 3, "litShader"),
     new Cube(glm::vec3(-4, -1.2f, -0.3f), glm ::vec3(1), 6, glm::vec3(1),
              "litShader", 1),
-    LoadObj("models/sphere.obj", glm::vec3(3, 0.3, -0.5), glm::vec3(0.4f),
-            glm::vec3(0), 0),
+    LoadObj("models/sphere.obj", glm::vec3(3, 0.3, -0.5), glm::vec3(1),
+            glm::vec3(0), 0, "litShader"),
     LoadObj("models/skull.obj", glm::vec3(0), glm::vec3(0.1f),
-            glm::vec3(-90, -23, 50), 1)
-
+            glm::vec3(-90, -23, 50), 1, "litShader"),
 };
 
 float ambient = 0.2f;
@@ -337,6 +336,8 @@ int main(void) {
   unsigned int crateTexture = GetTexture("textures/crate/crate.png");
   unsigned int crateSpecularTexture =
       GetTexture("textures/crate/crate-rim.png");
+  unsigned int skyboxTexture =
+      GetTexture("textures/skybox.jpg");
 
   const unsigned int SHADOW_WIDTH = 1024, SHADOW_HEIGHT = 1024;
 

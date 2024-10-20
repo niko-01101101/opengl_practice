@@ -9,6 +9,10 @@
 
 struct Vertex {
   float x, y, z, nx, ny, nz, u, v;
+
+  Vertex(){
+
+  }
 };
 
 std::vector<glm::vec3> CalculateNormals(std::vector<int> indices,
@@ -43,8 +47,10 @@ std::vector<glm::vec3> CalculateNormals(std::vector<int> indices,
 }
 
 Mesh *LoadObj(const std::string &filePath, glm::vec3 position, glm::vec3 scale,
-              glm::vec3 rotation, unsigned int texture) {
+              glm::vec3 rotation, unsigned int texture, std::string shader) {
   std::vector<Vertex> vertices;
+  std::vector<glm::vec3> verticesPositions;
+
   std::vector<int> indices;
   std::vector<glm::vec2> texCoords;
   std::vector<glm::vec3> normals;
@@ -59,10 +65,10 @@ Mesh *LoadObj(const std::string &filePath, glm::vec3 position, glm::vec3 scale,
     std::istringstream iss(line);
 
     if (line.substr(0, 2) == "v ") {
-      Vertex vertex;
+      glm::vec3 vertex;
       char prefix;
       iss >> prefix >> vertex.x >> vertex.y >> vertex.z;
-      vertices.push_back(vertex);
+      verticesPositions.push_back(vertex);
     } else if (line.substr(0, 2) == "vn ") {
       glm::vec3 normal;
       char prefix;
@@ -92,20 +98,28 @@ Mesh *LoadObj(const std::string &filePath, glm::vec3 position, glm::vec3 scale,
 
         try {
           int vertexIndex = std::stoi(indexStr) - 1;
-          faceIndices.push_back(vertexIndex);
+          faceIndices.push_back(vertices.size());
+
+          Vertex vertex = Vertex();
+
+          vertex.x = verticesPositions[vertexIndex].x;
+          vertex.y = verticesPositions[vertexIndex].y;
+          vertex.z = verticesPositions[vertexIndex].z;
 
           if (texCoords.size() > 0) {
             int texIndex = std::stoi(texStr) - 1;
-            vertices[vertexIndex].u = texCoords[texIndex].x;
-            vertices[vertexIndex].v = texCoords[texIndex].y;
+            vertex.u = texCoords[texIndex].x;
+            vertex.v = texCoords[texIndex].y;
           }
 
           if (normals.size() > 0) {
             int normIndex = std::stoi(normStr) - 1;
-            vertices[vertexIndex].nx = normals[normIndex].x;
-            vertices[vertexIndex].ny = normals[normIndex].y;
-            vertices[vertexIndex].nz = normals[normIndex].z;
+            vertex.nx = normals[normIndex].x;
+            vertex.ny = normals[normIndex].y;
+            vertex.nz = normals[normIndex].z;
           }
+
+          vertices.push_back(vertex);
 
         } catch (const std::invalid_argument &e) {
           std::cerr << "Invalid vertex index: " << indexStr
@@ -163,5 +177,5 @@ Mesh *LoadObj(const std::string &filePath, glm::vec3 position, glm::vec3 scale,
     vertexOn++;
   }
 
-  return new Mesh(outVertices, indices, position, scale, rotation, texture);
+  return new Mesh(outVertices, indices, position, scale, rotation, texture, shader);
 }

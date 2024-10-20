@@ -95,6 +95,6 @@ public:
   size_t getIndicesSize() override { return indices.size(); }
 
   void Draw() override {
-    setRotation(getRotation() + glm::vec3(0.5f, 1.0f, 0.0f));
+    //setRotation(getRotation() + glm::vec3(0.5f, 1.0f, 0.0f));
   }
 };
