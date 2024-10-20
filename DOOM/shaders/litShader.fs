@@ -3,6 +3,7 @@
 struct Material{
   float shine;
   sampler2D diffuse;
+  sampler2D texture;
   int diffuseId;
   sampler2D specular;
   int specularId;
@@ -25,7 +26,7 @@ struct Light{
   float linear;
   float quadratic;
 
-  vec4 lightSpaceMatrix;
+  mat4 lightSpaceMatrix;
 };
 
 out vec4 FragColor;
@@ -33,9 +34,7 @@ out vec4 FragColor;
 in vec2 TexCoord;
 in vec3 FragPos;
 in vec3 Normal;
-in vec4 FragPosLightSpace;
 
-uniform sampler2D ourTexture;
 uniform sampler2D depthMap;
 uniform vec3 ambient;
 
@@ -47,10 +46,13 @@ uniform Material material;
 vec3 CalcAreaLight(Light light, vec3 normal, vec3 fragPos,  vec3 viewDir);
 vec3 CalcSpotLight(Light light, vec3 normal,  vec3 viewDir);
 
-float CalcPointShadow(Light light, vec4 fragPosLightSpace);
+float CalcPointShadow(int lightId, Light light, vec4 fragPosLightSpace);
 
 #define LIGHTS 3
 uniform Light lights[LIGHTS];
+
+uniform sampler2D depthMaps[LIGHTS];
+uniform int lightId = 0;
 
 void main()
 {
@@ -58,7 +60,7 @@ void main()
     vec3 viewDir = normalize(viewPos - FragPos);
     float shadow = 0.0;
 
-    vec3 result = vec3(0.0f);
+    vec3 result = vec3(0.0);
     for(int i = 0; i < LIGHTS; i++) {
       Light lightOn = lights[i];
 
@@ -66,7 +68,10 @@ void main()
         result += CalcAreaLight(lightOn, norm, FragPos, viewDir);
       else if(lightOn.type == 1){
         result += CalcSpotLight(lightOn, norm, viewDir);
-        shadow = CalcPointShadow(lightOn, FragPosLightSpace);
+        vec4 fragPosLightSpace = lightOn.lightSpaceMatrix * vec4(FragPos, 1.0);
+        float shadowPoint = CalcPointShadow(i, lightOn, fragPosLightSpace);
+        
+        shadow += shadowPoint;
       }
     }
 
@@ -77,40 +82,41 @@ void main()
       if(material.diffuseId == textureId){
         FragColor =  texture(material.diffuse, TexCoord) * vec4(result * material.color, 1.0f);
       }else{
-        FragColor =  texture(ourTexture, TexCoord) * vec4(result * material.color, 1.0f);
+        FragColor =  texture(material.texture, TexCoord) * vec4(result * material.color, 1.0f);
       }
     }else{
       FragColor = vec4(result * material.color, 1.0f);
     }
 }
 
-float CalcPointShadow(Light light, vec4 fragPosLightSpace)
+vec4 LightIDToDepthMap(int lightId, vec2 coords){
+if (lightId == 0)
+return texture(depthMaps[0], coords);
+else if (lightId == 1)
+return texture(depthMaps[1], coords);
+}
+
+float CalcPointShadow(int lightId, Light light, vec4 fragPosLightSpace)
 {
-    // Perform perspective divide to transform to normalized device coordinates
     vec3 projCoords = fragPosLightSpace.xyz / fragPosLightSpace.w;
 
-    // Transform to [0, 1] range from [-1, 1]
     projCoords = projCoords * 0.5 + 0.5;
 
-    // Get the closest depth value from the light's perspective (from the shadow map)
-    float closestDepth = texture(depthMap, projCoords.xy).r; 
+    float closestDepth = LightIDToDepthMap(lightId, projCoords.xy).r; 
 
-    // Get the current depth of the fragment in light space
     float currentDepth = projCoords.z;
 
-    // Bias to avoid shadow acne
     vec3 lightDir = normalize(light.position - FragPos);
     float bias = max(0.05 * (1.0 - dot(normalize(Normal), lightDir)), 0.005);
 
-    // PCF (Percentage Closer Filtering) to smooth shadows
     float shadow = 0.0;
     
-    vec2 texelSize = 1.0 / textureSize(depthMap, 0);
+    vec2 texelSize = 1.0 / textureSize(depthMaps[0], 0);
     for(int x = -1; x <= 1; ++x)
     {
         for(int y = -1; y <= 1; ++y)
         {
-            float pcfDepth = texture(depthMap, projCoords.xy + vec2(x, y) * texelSize).r; 
+            float pcfDepth = LightIDToDepthMap(lightId, projCoords.xy + vec2(x, y) * texelSize).r; 
             shadow += currentDepth - bias > pcfDepth  ? 1.0 : 0.0;        
         }    
     }

@@ -58,8 +58,8 @@ Object *objects[] = {
 float ambient = 0.2f;
 Light *lights[] = {new SpotLight(glm::vec3(0.01f, 10.0f, 0.01f), 1.0f,
                                  glm::vec3(1.0f, 1.0f, 1.0f), glm::vec3(0, -90, 0), 30.0f, 32.5f),
-      //new SpotLight(glm::vec3(0.01f, 5.0f, 0.01f), 1.0f,
-       //                          glm::vec3(1.0f, 1.0f, 1.0f), glm::vec3(0, -90, 0), 30.0f, 32.5f),
+      new SpotLight(glm::vec3(0.01f, 5.0f, 0.01f), 1.0f,
+                                 glm::vec3(1.0f, 1.0f, 1.0f), glm::vec3(0, -90, 0), 30.0f, 32.5f),
                    // Colored Lights
                    /*new AreaLight(glm::vec3(-5.0f, 3.0f, 0.0f), 1.0f, 10.0f,
                                  glm::vec3(0.0f, 0.0f, 1.0f)),
@@ -77,6 +77,20 @@ float pitch = 0.0f;
 float lastX = 800.0f / 2.0;
 float lastY = 600.0 / 2.0;
 SmoothCamera *camera = new SmoothCamera(SCR_WIDTH, SCR_HEIGHT);
+
+glm::vec3 eulerToDirection(float pitch, float yaw) {
+    // Convert degrees to radians
+    float pitchRad = glm::radians(pitch);
+    float yawRad = glm::radians(yaw);
+
+    // Calculate the direction vector
+    glm::vec3 direction;
+    direction.x = cos(pitchRad) * sin(yawRad);
+    direction.y = sin(pitchRad);
+    direction.z = cos(pitchRad) * cos(yawRad);
+
+    return glm::normalize(direction);
+}
 
 void checkShaderCompileStatus(GLuint shader) {
   GLint success;
@@ -303,14 +317,12 @@ int main(void) {
 
   // Load shader
   ShaderManager shaderManager;
-  shaderManager.loadShader("litShader", "shaders/vertexShader.glsl",
-                           "shaders/litShader.glsl");
-  shaderManager.loadShader("unlitShader", "shaders/vertexShader.glsl",
-                           "shaders/unlitShader.glsl");
-  shaderManager.loadShader("depthShader", "shaders/depthVertexShader.glsl",
-                           "shaders/depthFragShader.glsl");
-  shaderManager.loadShader("debugDepthShader", "shaders/vertexShader.glsl",
-                           "shaders/debugDepthMapFrag.glsl");
+  shaderManager.loadShader("litShader", "shaders/vertexShader.vs",
+                           "shaders/litShader.fs");
+  shaderManager.loadShader("unlitShader", "shaders/vertexShader.vs",
+                           "shaders/unlitShader.fs");
+  shaderManager.loadShader("depthShader", "shaders/depthVertexShader.vs",
+                           "shaders/depthFragShader.fs");
 
   // Load Materials
   Material materials[] = {Material(0, 0, glm::vec3(1.0f, 1.0f, 1.0f), 0.1),
@@ -327,26 +339,36 @@ int main(void) {
       GetTexture("textures/crate/crate-rim.png");
 
   const unsigned int SHADOW_WIDTH = 1024, SHADOW_HEIGHT = 1024;
-  unsigned int depthMapFBO;
-  glGenFramebuffers(1, &depthMapFBO);
 
-  unsigned int depthMap;
-  glGenTextures(1, &depthMap);
-  glBindTexture(GL_TEXTURE_2D, depthMap);
-  glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, SHADOW_WIDTH,
-               SHADOW_HEIGHT, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
-  float borderColor[] = {1.0, 1.0, 1.0, 1.0};
-  glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);
-  // attach depth texture as FBO's depth buffer
-  glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
-  glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D,
-                         depthMap, 0);
-  glDrawBuffer(GL_NONE);
-  glReadBuffer(GL_NONE);
+  for (Light *light : lights) {
+    if (light->getType() == "SpotLight") {
+
+      SpotLight *spotlight = dynamic_cast<SpotLight *>(light);
+
+      unsigned int depthMapFBO;
+      glGenFramebuffers(1, &depthMapFBO);
+      spotlight->setDepthMapFBO(depthMapFBO);
+
+      unsigned int depthMap;
+      glGenTextures(1, &depthMap);
+      glBindTexture(GL_TEXTURE_2D, depthMap);
+      spotlight->setDepthMap(depthMap);
+      glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, SHADOW_WIDTH,
+                   SHADOW_HEIGHT, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
+      glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+      glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+      glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
+      glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
+      float borderColor[] = {1.0, 1.0, 1.0, 1.0};
+      glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);
+      // attach depth texture as FBO's depth buffer
+      glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
+      glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D,
+                             depthMap, 0);
+      glDrawBuffer(GL_NONE);
+      glReadBuffer(GL_NONE);
+    }
+  }
 
   // Check framebuffer completeness
   if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {
@@ -380,43 +402,58 @@ int main(void) {
 
     // lightProjection =
     //    glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);
-    lightView = glm::lookAt(lights[0]->getPosition(), glm::vec3(0.0f),
-                            glm::vec3(0.0, 1.0, 0.0));
-    lightSpaceMatrix = lightProjection * lightView;
+    for (Light *light : lights) {
 
-    glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
-    glViewport(0, 0, SHADOW_WIDTH, SHADOW_HEIGHT);
-    glClear(GL_DEPTH_BUFFER_BIT);
+      if (light->getType() == "SpotLight") {
 
-    Shader *depthShader = shaderManager.getShader("depthShader");
-    depthShader->use();
-    depthShader->setMat4("lightSpaceMatrix", lightSpaceMatrix);
+        SpotLight *spotlight = dynamic_cast<SpotLight *>(light);
 
-    // Quick Render
-    for (Object *object : objects) {
-      glm::mat4 model = glm::mat4(1.0f);
-      model = glm::translate(model, object->getPosition());
+        lightView = glm::mat4();
 
-      glm::vec3 rot = object->getRotation();
-      model =
-          glm::rotate(model, glm::radians(rot.x), glm::vec3(1.0f, 0.0f, 0.0f));
-      model =
-          glm::rotate(model, glm::radians(rot.y), glm::vec3(0.0f, 1.0f, 0.0f));
-      model =
-          glm::rotate(model, glm::radians(rot.z), glm::vec3(0.0f, 0.0f, 1.0f));
+        glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f);
+        glm::vec3 direction = eulerToDirection(90.0f, 0.0f);
 
-      model = glm::scale(model, object->getScale());
+        lightView = glm::lookAt(spotlight->getPosition(), (spotlight->getPosition() - direction), up);
 
-      depthShader->setMat4("model", model);
+        lightSpaceMatrix = lightProjection * lightView;
 
-      glBindVertexArray(object->getVAO());
+        spotlight->setSpaceMatrix(lightSpaceMatrix);
 
-      glDrawElements(GL_TRIANGLES, object->getIndicesSize(), GL_UNSIGNED_INT,
-                     0);
+        glBindFramebuffer(GL_FRAMEBUFFER, spotlight->getDepthMapFBO());
+        glViewport(0, 0, SHADOW_WIDTH, SHADOW_HEIGHT);
+        glClear(GL_DEPTH_BUFFER_BIT);
 
-      glBindVertexArray(0);
+        Shader *depthShader = shaderManager.getShader("depthShader");
+        depthShader->use();
+        depthShader->setMat4("lightSpaceMatrix", lightSpaceMatrix);
+
+        // Quick Render
+        for (Object *object : objects) {
+          glm::mat4 model = glm::mat4(1.0f);
+          model = glm::translate(model, object->getPosition());
+
+          glm::vec3 rot = object->getRotation();
+          model = glm::rotate(model, glm::radians(rot.x),
+                              glm::vec3(1.0f, 0.0f, 0.0f));
+          model = glm::rotate(model, glm::radians(rot.y),
+                              glm::vec3(0.0f, 1.0f, 0.0f));
+          model = glm::rotate(model, glm::radians(rot.z),
+                              glm::vec3(0.0f, 0.0f, 1.0f));
+
+          model = glm::scale(model, object->getScale());
+
+          depthShader->setMat4("model", model);
+
+          glBindVertexArray(object->getVAO());
+
+          glDrawElements(GL_TRIANGLES, object->getIndicesSize(),
+                         GL_UNSIGNED_INT, 0);
+
+          glBindVertexArray(0);
+        }
+        glBindFramebuffer(GL_FRAMEBUFFER, 0);
+      }
     }
-    glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
     // reset viewport
     int width, height;
@@ -450,8 +487,6 @@ int main(void) {
       Shader *currentShader = shaderManager.getShader(object->getShader());
       currentShader->use();
 
-      currentShader->setMat4("lightSpaceMatrix", lightSpaceMatrix);
-
       currentShader->setInt("material.diffuseId", currentMaterial.getDiffuse());
       currentShader->setInt("material.specularId",
                             currentMaterial.getSpecular());
@@ -472,15 +507,21 @@ int main(void) {
         currentShader->setFloat(lightStr + ".intensity", light->getIntensity());
 
         if (light->getType() == "SpotLight") {
-          lightView = glm::lookAt(light->getPosition(), glm::vec3(0.0f),
-                                  glm::vec3(0.0, 1.0, 0.0));
-          lightSpaceMatrix = lightProjection * lightView;
-          currentShader->setMat4(lightStr + "lightSpaceMatrix",
-                                 lightSpaceMatrix);
 
           currentShader->setInt(lightStr + ".type", 1);
 
           SpotLight *spotlight = dynamic_cast<SpotLight *>(light);
+
+          int depthTex = (GL_TEXTURE0 + lightId);
+          glActiveTexture(depthTex);
+          glBindTexture(GL_TEXTURE_2D, spotlight->getDepthMap());
+
+          currentShader->setInt(lightStr + ".depthMapId", lightId);
+          currentShader->setInt("depthMaps[" + std::to_string(lightId) + "]",
+                                lightId);
+
+          currentShader->setMat4(lightStr + ".lightSpaceMatrix", spotlight->getSpaceMatrix());
+
           currentShader->setVec3(lightStr + ".direction",
                                  spotlight->getDirection());
           currentShader->setFloat(
@@ -489,6 +530,7 @@ int main(void) {
           currentShader->setFloat(
               lightStr + ".outerCutOff",
               glm::cos(glm::radians(spotlight->getOuterCutOff())));
+          //TODO: Change to use spotlight vars
           currentShader->setFloat(lightStr + ".constant", 1.0f);
           currentShader->setFloat(lightStr + ".linear", 0.09f);
           currentShader->setFloat(lightStr + ".quadratic", 0.032f);
@@ -503,20 +545,17 @@ int main(void) {
 
       glBindVertexArray(object->getVAO());
 
-      glActiveTexture(GL_TEXTURE0);
+      glActiveTexture(GL_TEXTURE0 + lightId);
       glBindTexture(GL_TEXTURE_2D, object->getTexture());
+      currentShader->setInt("material.texture", lightId);
 
-      glActiveTexture(GL_TEXTURE1);
-      glBindTexture(GL_TEXTURE_2D, depthMap);
-      currentShader->setInt("depthMap", 1);
-
-      glActiveTexture(GL_TEXTURE2);
+      glActiveTexture(GL_TEXTURE1 + lightId);
       glBindTexture(GL_TEXTURE_2D, currentMaterial.getDiffuse());
-      currentShader->setInt("material.diffuse", 2);
+      currentShader->setInt("material.diffuse", lightId + 1);
 
-      glActiveTexture(GL_TEXTURE3);
+      glActiveTexture(GL_TEXTURE2 + lightId);
       glBindTexture(GL_TEXTURE_2D, currentMaterial.getSpecular());
-      currentShader->setInt("material.specular", 3);
+      currentShader->setInt("material.specular", lightId + 2);
 
       glm::mat4 model = glm::mat4(1.0f);
       model = glm::translate(model, object->getPosition());

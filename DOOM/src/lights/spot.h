@@ -7,6 +7,8 @@ class SpotLight : public Light {
   float cutOff = 12.5f;
   float outerCutOff = 17.5f;
   unsigned int depthMap;
+  unsigned int depthMapFBO;
+  glm::mat4 spaceMatrix;
 
 public:
   SpotLight(glm::vec3 position_, float intensity_, glm::vec3 color_,
@@ -29,6 +31,12 @@ public:
 
   unsigned int getDepthMap() { return depthMap; }
   void setDepthMap(unsigned int depthMap_) { depthMap = depthMap_; }
+
+  glm::mat4 getSpaceMatrix() {return spaceMatrix;}
+  void setSpaceMatrix (glm::mat4 spaceMatrix_) {spaceMatrix = spaceMatrix_;}
+
+  unsigned int getDepthMapFBO() { return depthMapFBO; }
+  void setDepthMapFBO(unsigned int depthMapFBO_) { depthMapFBO = depthMapFBO_; }
 
   std::string getType() override { return "SpotLight"; }
 };
