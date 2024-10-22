@@ -67,11 +67,11 @@ void main()
       if(lightOn.type == 0)
         result += CalcAreaLight(lightOn, norm, FragPos, viewDir);
       else if(lightOn.type == 1){
-        result += CalcSpotLight(lightOn, norm, viewDir);
+        result += CalcSpotLight(lightOn, norm, viewDir) * lightOn.intensity;
         vec4 fragPosLightSpace = lightOn.lightSpaceMatrix * vec4(FragPos, 1.0);
         float shadowPoint = CalcPointShadow(i, lightOn, fragPosLightSpace);
         
-        shadow += shadowPoint;
+        shadow += shadowPoint * lightOn.intensity;
       }
     }
 
@@ -120,7 +120,7 @@ float CalcPointShadow(int lightId, Light light, vec4 fragPosLightSpace)
             shadow += currentDepth - bias > pcfDepth  ? 1.0 : 0.0;        
         }    
     }
-    shadow /= 10.0;
+    shadow /= 12.0;
 
 
     // If the fragment is outside the light's far plane, it is not in shadow

@@ -1167,6 +1167,7 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/lights/light.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/lights/spot.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/mesh.h \
+  /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/loaders/cubeMapLoader.cpp \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/loaders/objFileLoader.cpp \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/material.h \
   /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/camera.h \
@@ -1183,6 +1184,8 @@ CMakeFiles/DOOM.dir/src/main.cpp.o: /Users/nik/Documents/GitHub/opengl_practice/
 /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/objects/plane.h:
 
 /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/loaders/objFileLoader.cpp:
+
+/Users/nik/Documents/GitHub/opengl_practice/DOOM/src/loaders/cubeMapLoader.cpp:
 
 /Users/nik/Documents/GitHub/opengl_practice/DOOM/src/lights/area.h:
 

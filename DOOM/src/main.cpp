@@ -6,6 +6,7 @@
 #include <glad/glad.h>
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
+#include <iostream>
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
@@ -13,6 +14,9 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+#include <string>
+#include <vector>
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -31,7 +35,9 @@
 #include "shader.h"
 #include "shaderManager.h"
 
+#include "loaders/cubeMapLoader.cpp"
 #include "loaders/objFileLoader.cpp"
+
 #include "material.h"
 
 float deltaTime = 0.0f;
@@ -42,8 +48,6 @@ const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
 Object *objects[] = {
-    LoadObj("models/sphere.obj", glm::vec3(0.01f), glm::vec3(60),
-            glm::vec3(0), 8, "unlitShader"),
     new Plane(glm::vec3(0.0f, -5.0f, 0.0f), glm::vec3(10, 10, 10),
               glm::vec3(-90, 0, 0), 3, "litShader"),
     new Cube(glm::vec3(-4, -1.2f, -0.3f), glm ::vec3(1), 6, glm::vec3(1),
@@ -55,10 +59,8 @@ Object *objects[] = {
 };
 
 float ambient = 0.2f;
-Light *lights[] = {new SpotLight(glm::vec3(0.01f, 10.0f, 0.01f), 1.0f,
-                                 glm::vec3(1.0f, 1.0f, 1.0f), glm::vec3(0, -90, 0), 30.0f, 32.5f),
-      new SpotLight(glm::vec3(0.01f, 5.0f, 0.01f), 1.0f,
-                                 glm::vec3(1.0f, 1.0f, 1.0f), glm::vec3(0, -90, 0), 30.0f, 32.5f),
+Light *lights[] = {new SpotLight(glm::vec3(10.0f, 10.0f, 10.0f), 5.0f,
+                                 glm::vec3(1.0f, 1.0f, 1.0f), glm::vec3(-45, -45, 0), 90.0f, 92.5f),
                    // Colored Lights
                    /*new AreaLight(glm::vec3(-5.0f, 3.0f, 0.0f), 1.0f, 10.0f,
                                  glm::vec3(0.0f, 0.0f, 1.0f)),
@@ -77,18 +79,38 @@ float lastX = 800.0f / 2.0;
 float lastY = 600.0 / 2.0;
 SmoothCamera *camera = new SmoothCamera(SCR_WIDTH, SCR_HEIGHT);
 
+float skyboxVertices[] = {
+    // positions
+    -1.0f, 1.0f,  -1.0f, -1.0f, -1.0f, -1.0f, 1.0f,  -1.0f, -1.0f,
+    1.0f,  -1.0f, -1.0f, 1.0f,  1.0f,  -1.0f, -1.0f, 1.0f,  -1.0f,
+
+    -1.0f, -1.0f, 1.0f,  -1.0f, -1.0f, -1.0f, -1.0f, 1.0f,  -1.0f,
+    -1.0f, 1.0f,  -1.0f, -1.0f, 1.0f,  1.0f,  -1.0f, -1.0f, 1.0f,
+
+    1.0f,  -1.0f, -1.0f, 1.0f,  -1.0f, 1.0f,  1.0f,  1.0f,  1.0f,
+    1.0f,  1.0f,  1.0f,  1.0f,  1.0f,  -1.0f, 1.0f,  -1.0f, -1.0f,
+
+    -1.0f, -1.0f, 1.0f,  -1.0f, 1.0f,  1.0f,  1.0f,  1.0f,  1.0f,
+    1.0f,  1.0f,  1.0f,  1.0f,  -1.0f, 1.0f,  -1.0f, -1.0f, 1.0f,
+
+    -1.0f, 1.0f,  -1.0f, 1.0f,  1.0f,  -1.0f, 1.0f,  1.0f,  1.0f,
+    1.0f,  1.0f,  1.0f,  -1.0f, 1.0f,  1.0f,  -1.0f, 1.0f,  -1.0f,
+
+    -1.0f, -1.0f, -1.0f, -1.0f, -1.0f, 1.0f,  1.0f,  -1.0f, -1.0f,
+    1.0f,  -1.0f, -1.0f, -1.0f, -1.0f, 1.0f,  1.0f,  -1.0f, 1.0f};
+
 glm::vec3 eulerToDirection(float pitch, float yaw) {
-    // Convert degrees to radians
-    float pitchRad = glm::radians(pitch);
-    float yawRad = glm::radians(yaw);
+  // Convert degrees to radians
+  float pitchRad = glm::radians(pitch);
+  float yawRad = glm::radians(yaw);
 
-    // Calculate the direction vector
-    glm::vec3 direction;
-    direction.x = cos(pitchRad) * sin(yawRad);
-    direction.y = sin(pitchRad);
-    direction.z = cos(pitchRad) * cos(yawRad);
+  // Calculate the direction vector
+  glm::vec3 direction;
+  direction.x = cos(pitchRad) * sin(yawRad);
+  direction.y = sin(pitchRad);
+  direction.z = cos(pitchRad) * cos(yawRad);
 
-    return glm::normalize(direction);
+  return glm::normalize(direction);
 }
 
 void checkShaderCompileStatus(GLuint shader) {
@@ -322,9 +344,11 @@ int main(void) {
                            "shaders/unlitShader.fs");
   shaderManager.loadShader("depthShader", "shaders/depthVertexShader.vs",
                            "shaders/depthFragShader.fs");
+  shaderManager.loadShader("skyboxShader", "shaders/skyboxShader.vs",
+                           "shaders/skyboxShader.fs");
 
   // Load Materials
-  Material materials[] = {Material(0, 0, glm::vec3(1.0f, 1.0f, 1.0f), 0.1),
+  Material materials[] = {Material(0, 0, glm::vec3(1.0f, 1.0f, 1.0f), 0.3),
                           Material(6, 7, glm::vec3(1.0f, 1.0f, 1.0f), 1.0)};
 
   // Load Texture
@@ -336,8 +360,28 @@ int main(void) {
   unsigned int crateTexture = GetTexture("textures/crate/crate.png");
   unsigned int crateSpecularTexture =
       GetTexture("textures/crate/crate-rim.png");
-  unsigned int skyboxTexture =
-      GetTexture("textures/skybox.jpg");
+  unsigned int skyboxTexture = GetTexture("textures/skybox.jpg");
+
+  /* std::vector<std::string> faces{
+       "textures/simple_skybox/right.tga", "textures/simple_skybox/left.tga",
+       "textures/simple_skybox/top.tga",   "textures/simple_skybox/bottom.tga",
+       "textures/simple_skybox/front.tga", "textures/simple_skybox/back.tga"};*/
+  std::vector<std::string> faces{
+      "textures/ex_skybox/right.jpg",  "textures/ex_skybox/left.jpg",
+      "textures/ex_skybox/bottom.jpg", "textures/ex_skybox/top.jpg",
+      "textures/ex_skybox/front.jpg",  "textures/ex_skybox/back.jpg"};
+  unsigned int skybox = loadCubemap(faces);
+
+  // skybox VAO
+  unsigned int skyboxVAO, skyboxVBO;
+  glGenVertexArrays(1, &skyboxVAO);
+  glGenBuffers(1, &skyboxVBO);
+  glBindVertexArray(skyboxVAO);
+  glBindBuffer(GL_ARRAY_BUFFER, skyboxVBO);
+  glBufferData(GL_ARRAY_BUFFER, sizeof(skyboxVertices), &skyboxVertices,
+               GL_STATIC_DRAW);
+  glEnableVertexAttribArray(0);
+  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void *)0);
 
   const unsigned int SHADOW_WIDTH = 1024, SHADOW_HEIGHT = 1024;
 
@@ -381,6 +425,10 @@ int main(void) {
   glEnable(GL_DEPTH_TEST);
   glDepthFunc(GL_LESS);
 
+  glEnable(GL_CULL_FACE);
+  glCullFace(GL_FRONT);
+  glFrontFace(GL_CW);
+
   while (!glfwWindowShouldClose(window)) {
     processInput(window);
 
@@ -396,7 +444,7 @@ int main(void) {
     // ShadowMap Creation
     glm::mat4 lightProjection, lightView;
     glm::mat4 lightSpaceMatrix;
-    float near_plane = 1.0f, far_plane = 50.0f;
+    float near_plane = 1.0f, far_plane = 100.0f;
     lightProjection = glm::perspective(
         glm::radians(90.0f), (GLfloat)SHADOW_WIDTH / (GLfloat)SHADOW_HEIGHT,
         near_plane, far_plane);
@@ -412,9 +460,11 @@ int main(void) {
         lightView = glm::mat4();
 
         glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f);
-        glm::vec3 direction = eulerToDirection(90.0f, 0.0f);
+        glm::vec3 lightRot = spotlight->getDirection();
+        glm::vec3 direction = eulerToDirection(-lightRot.y, -lightRot.x);
 
-        lightView = glm::lookAt(spotlight->getPosition(), (spotlight->getPosition() - direction), up);
+        lightView = glm::lookAt(spotlight->getPosition(),
+                                (spotlight->getPosition() - direction), up);
 
         lightSpaceMatrix = lightProjection * lightView;
 
@@ -471,7 +521,7 @@ int main(void) {
     // Camera
     glm::mat4 view = glm::mat4(1.0f);
 
-    camera->setPerspective(45.0f, aspectRatio, 0.1f, 100.0f);
+    camera->setPerspective(45.0f, aspectRatio, 0.1f, 300.0f);
 
     camera->calc();
 
@@ -481,6 +531,19 @@ int main(void) {
     glm::mat4 projection;
 
     projection = camera->getPerspective();
+
+    // Render Skybox
+    glDepthMask(GL_FALSE);
+    Shader *skyboxShader = shaderManager.getShader("skyboxShader");
+    skyboxShader->use();
+    skyboxShader->setMat4("view", glm::mat4(glm::mat3(view)));
+    skyboxShader->setMat4("projection", projection);
+    glBindVertexArray(skyboxVAO);
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_CUBE_MAP, skybox);
+    glDrawArrays(GL_TRIANGLES, 0, 36);
+    glBindVertexArray(0);
+    glDepthMask(GL_TRUE);
 
     // Update Objects
     for (Object *object : objects) {
@@ -521,7 +584,8 @@ int main(void) {
           currentShader->setInt("depthMaps[" + std::to_string(lightId) + "]",
                                 lightId);
 
-          currentShader->setMat4(lightStr + ".lightSpaceMatrix", spotlight->getSpaceMatrix());
+          currentShader->setMat4(lightStr + ".lightSpaceMatrix",
+                                 spotlight->getSpaceMatrix());
 
           currentShader->setVec3(lightStr + ".direction",
                                  spotlight->getDirection());
@@ -531,7 +595,7 @@ int main(void) {
           currentShader->setFloat(
               lightStr + ".outerCutOff",
               glm::cos(glm::radians(spotlight->getOuterCutOff())));
-          //TODO: Change to use spotlight vars
+          // TODO: Change to use spotlight vars
           currentShader->setFloat(lightStr + ".constant", 1.0f);
           currentShader->setFloat(lightStr + ".linear", 0.09f);
           currentShader->setFloat(lightStr + ".quadratic", 0.032f);
@@ -606,6 +670,9 @@ int main(void) {
       glDeleteBuffers(1, &ebo);
     }
   }
+
+  glDeleteVertexArrays(1, &skyboxVAO);
+  glDeleteBuffers(1, &skyboxVBO);
 
   glBindVertexArray(0);
 

@@ -5,7 +5,7 @@
 #pragma once
 class Camera {
   glm::mat4 perspective =
-      glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
+      glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 300.0f);
   glm::vec3 position = glm::vec3(0.0f, 0.0f, 3.0f);
   glm::vec3 rotation = glm::vec3(0.01f, 0.01f, 0.01f);
   glm::vec3 forward = glm::vec3(0.0f, 0.0f, -1.0f);
